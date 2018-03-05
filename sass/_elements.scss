@@ -1,0 +1,95 @@
+a {
+	color:$orange;
+	text-decoration:none; 
+	
+
+	
+	&:hover {
+		text-decoration:underline;
+	}
+}
+
+.icon {
+	display: inline-block;
+    height: 24px;
+    width: 24px; 
+
+	.iconFill { fill:$white; }  
+	
+	&--white { fill:$white; }   
+	&--gray02 { fill:$gray02; }
+
+	&.sm {
+		height: 16px;
+	    width: 16px;
+	}   
+	
+	&.lg {
+		height: 48px;
+	    width: 48px;
+	}   
+	
+	&.xl {         
+		height:60px;
+		width:60px;
+	}
+} 
+
+.indicator { 
+	display:flex; 
+	
+	li { 
+		background:$gray02; 
+		display:block; 
+		height:2px;
+		margin:0 2px; 
+		width:14px;
+		
+		&.active {  
+			background:$white;
+		}
+	}
+}
+
+.progress {  
+	background:$gray03; 
+	-webkit-appearance:none;
+	border-radius:0;
+	display:block; 
+	height:4px;
+	margin:0;
+	width:100%;
+	
+	&::-webkit-progress-bar {
+		background:$gray03;
+	}
+	
+	&::-webkit-progress-value {
+		background:$white;
+	}  
+	
+	&[value=""]{   
+		display:none;
+		
+		&::-webkit-progress-bar {
+			background:transparent;
+		}
+
+		&::-webkit-progress-value {
+			background:transparent;
+		}	
+	}
+	
+	&[value="100"]{
+		&::-webkit-progress-value {
+			background:$green;
+		}	
+	}
+} 
+
+.text {
+	&--white { color:$white; }
+	&--gray00 { color:$gray00; }
+	&--gray01 { color:$gray01; }
+	&--gray02 { color:$gray02; }
+}

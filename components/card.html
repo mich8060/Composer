@@ -1,0 +1,44 @@
+<div class="card">
+	<div class="card--head"> 
+		<div class="card--overlay" v-if="overlay == true">
+			<div class="card--play icon lg">
+				<svg viewBox="0 0 512 512" role="img" aria-label="Play">
+					<g class="defaultFill---3BX80 playIconFill---2U0JW">
+						<defs>
+							<linearGradient id="playIconGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+								<stop offset="0%" stop-color="#F05A28" stop-opacity="1"></stop>
+								<stop offset="100%" stop-color="#E80A89" stop-opacity="1"></stop>
+							</linearGradient>
+						</defs>
+						<path d="M255.5,512c-141.2,0-256-114.8-256-256S114.3,0,255.5,0s256,114.8,256,256S396.7,512,255.5,512z M255.5,24.4C127.8,24.4,23.9,128.3,23.9,256s103.9,231.6,231.6,231.6c127.7,0,231.6-103.9,231.6-231.6S383.2,24.4,255.5,24.4z M194.5,134.1v243.8L365.2,256L194.5,134.1z"></path>
+					</g>
+				</svg>
+			</div>
+			<div class="card--actions">
+				<div class="card--more icon">
+					<svg role="img" aria-label="more icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 14.5c-1.1046 0-2-.8954-2-2s.8954-2 2-2 2 .8954 2 2-.8954 2-2 2zm12 0c-1.1046 0-2-.8954-2-2s.8954-2 2-2 2 .8954 2 2-.8954 2-2 2zm-6 0c-1.1046 0-2-.8954-2-2s.8954-2 2-2 2 .8954 2 2-.8954 2-2 2z"></path></svg>
+				</div>
+				<div class="card--actionsheet">
+					<ul class="actionsheet">
+						<li><a href="#">Remove</a></li>
+						<li class="actionsheet--submenu"><a href="#">Add to Channel</a></li>
+						<li class="actionsheet--label"><a href="#">Share via</a></li>
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">LinkedIn</a></li>
+						<li><a href="#">Copy Link</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<a href="#" class="card--image"><img v-bind:src="image" alt="" /></a>
+		<progress class="progress" v-bind:value="status" max="100"></progress>
+		<div class="card--progress"><div class="card--bar"></div></div>
+	</div>  
+	<div class="card--info">
+		<a href="#" class="card--title">{{title}}</a>  
+		<div class="card--metadata1">{{metadata1}}</div> 
+		<div class="card--metadata2">{{metadata2}}</div>
+		<div class="card--state">{{state}}</div>
+	</div>
+</div>

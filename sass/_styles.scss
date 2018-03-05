@@ -1,0 +1,84 @@
+/*  
+	Color palette
+	Last Edited: 6/16/17
+	By: Michael Stevens
+*/   
+
+$black: 		#000000;
+$white: 		#ffffff;
+
+$gray00: 	 	#f2f2f2;
+$gray01: 		#cccccc;
+$gray02: 		#aaaaaa;
+$gray03: 		#555555;
+$gray04: 		#363636;
+$gray05: 		#222222;
+$gray06: 		#181818;  
+
+$pink: 			#e80a89;
+$red: 			#de3636;
+$orange: 		#f96816;
+$orangeLight: 	#ff7b39;
+$yellow: 		#ffc200;
+$greenLight: 	#86ce21;
+$green: 		#23aa5a;
+$blue: 			#137bc2;
+
+$gradientHorz:  linear-gradient(to right, #f05a28, #e80a89);
+$gradientVert:  linear-gradient(to bottom, #f05a28, #e80a89);
+ 
+
+/*  
+	Typography Rules
+	Last Edited: 6/16/17
+	By: Michael Stevens
+*/
+
+
+@mixin type--gigantic 	{ font-size:60px; line-height:40px; letter-spacing:-1.00px; text-rendering:optimizeLegibility; word-wrap:normal; }   	      
+@mixin type--xxxl 		{ font-size:48px; line-height:40px; letter-spacing:-0.72px; text-rendering:optimizeLegibility; word-wrap:normal; }		      
+@mixin type--xxl 		{ font-size:36px; line-height:40px; letter-spacing:-0.54px; text-rendering:optimizeLegibility; word-wrap:normal; }
+@mixin type--xl 		{ font-size:30px; line-height:36px; letter-spacing:-0.45px; text-rendering:optimizeLegibility; word-wrap:normal; }
+@mixin type--lg 		{ font-size:24px; line-height:32px; letter-spacing: 0.32px; text-rendering:optimizeLegibility; word-wrap:normal; }
+@mixin type--md 		{ font-size:18px; line-height:24px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; } 
+@mixin type--sm 		{ font-size:14px; line-height:20px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; }
+@mixin type--xs 		{ font-size:12px; line-height:20px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; }
+
+@mixin type_weight--xlight 	{ font-weight:100; }
+@mixin type_weight--light 	{ font-weight:200; }            
+@mixin type_weight--book 	{ font-weight:400; }   
+@mixin type_weight--medium 	{ font-weight:500; }
+@mixin type_weight--bold 	{ font-weight:700; } 
+
+$type_height--compress: 	16px; 
+$type_height--tight: 		20px;
+$type_height--standard: 	24px;
+$type_height--extra: 		32px;
+$type_height--huge: 		40px; 
+
+/* 	
+	Containers
+	Last Edited: 6/26/17
+	By: Michael Stevens
+*/
+
+@mixin container {       
+	box-sizing:border-box; 
+	max-width:1400px;      
+	margin:0 auto;  
+	padding:0 20px;
+	position:relative;
+	
+	&.debug { } 
+	
+	&:after {         
+		clear:both;
+		content:"";
+		display:block;
+	}                                 
+}
+
+@mixin container--xs { @include container; max-width:800px; }
+@mixin container--sm { @include container; max-width:1000px; }
+@mixin container--md { @include container; max-width:1200px; }
+@mixin container--lg { @include container; max-width:1600px; }

@@ -1,0 +1,35 @@
+/*  
+	Color palette
+	Last Edited: 6/16/17
+	By: Michael Stevens
+*/
+/*  
+	Typography Rules
+	Last Edited: 6/16/17
+	By: Michael Stevens
+*/
+/* 	
+	Containers
+	Last Edited: 6/26/17
+	By: Michael Stevens
+*/
+.type--xs { font-size: 12px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--sm { font-size: 14px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--md { font-size: 18px; line-height: 24px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--lg { font-size: 24px; line-height: 32px; letter-spacing: 0.32px; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--xl { font-size: 30px; line-height: 36px; letter-spacing: -0.45px; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--xxl { font-size: 36px; line-height: 40px; letter-spacing: -0.54px; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--xxxl { font-size: 48px; line-height: 40px; letter-spacing: -0.72px; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type--gigantic { font-size: 60px; line-height: 40px; letter-spacing: -1.00px; text-rendering: optimizeLegibility; word-wrap: normal; }
+.type_weight--xlight { font-weight: 100; }
+.type_weight--light { font-weight: 200; }
+.type_weight--book { font-weight: 400; }
+.type_weight--medium { font-weight: 500; }
+.type_weight--bold { font-weight: 700; }
+
+p.short:empty { display: block; }
+p.short:empty:before { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus justo sit amet purus bibendum, a tincidunt magna ullamcorper."; display: block; height: auto; }
+p.medium:empty { display: block; }
+p.medium:empty:before { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus justo sit amet purus bibendum, a tincidunt magna ullamcorper. Aliquam erat volutpat. Donec id varius tortor, eu semper enim. Nulla dictum et turpis a congue. Vivamus vel justo eget ex tincidunt efficitur non quis tellus."; display: block; height: auto; }
+p.long:empty { display: block; }
+p.long:empty:before { content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus justo sit amet purus bibendum, a tincidunt magna ullamcorper. Aliquam erat volutpat. Donec id varius tortor, eu semper enim. Nulla dictum et turpis a congue. Vivamus vel justo eget ex tincidunt efficitur non quis tellus. Mauris ornare bibendum ex, at maximus diam porttitor quis. Nam fermentum massa in imperdiet vestibulum. Curabitur mattis lectus efficitur dignissim tempor."; display: block; height: auto; }

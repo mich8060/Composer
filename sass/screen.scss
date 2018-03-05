@@ -1,0 +1,42 @@
+@import url(https://cloud.typography.com/6966154/691568/css/fonts.css);   
+@import "_mixins";    
+@import "_styles";
+@import "_normalize";
+@import "_elements";  
+@import "_components";  
+
+* { box-sizing:border-box; } 
+
+html, body { 
+	background:#181818; 
+	color:#fff; 
+	font-family: Gotham SSm A,Gotham SSm B, sans-serif;            
+	margin:0; 
+	padding:0;
+} 
+      
+.main { 
+	height:3000px; 
+	margin:0 auto; 
+	max-width:1600px; 
+	padding:92px 20px;         
+	
+	@media only screen and (min-width:768px) { padding:92px 90px 90px 150px; }  
+	@media only screen and (min-width:1600px) { padding:92px 90px 90px 310px; }
+	
+	&--container {                
+	}
+}
+  
+
+
+.overlay { 
+	background:rgba(0,0,0,0.25); 
+	bottom:0; 
+	display:none; 
+	left:0; 
+	position:fixed; 
+	right:0; 
+	top:0; 
+	z-index:99999;
+}
