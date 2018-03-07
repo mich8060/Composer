@@ -1,138 +1,27 @@
-var data = 'app app-nav app-header app-search bookmark bookmark-row card carousel hero icon';
-	data = data.split(" ");
-	console.log(data);
+var data = 'app-search hero tile';
+	data = data.split(" ");   
 
 // Component Loader
-$.each(data,function(_i,_v){  	   
-	console.log("./components/"+_v+".html");               
-	$(document).load("./components/"+_v+".html",function(response, status, xhr){   
-		console.log(_v+'-template');   
+$.each(data,function(_i,_v){  	                           
+	$(document).load("./components/"+_v+".html",function(response, status, xhr){       
 		var script = document.createElement('script');
 			script.type = 'text/x-template';
 			script.id = _v+'-template';
 			script.text = response;         
-			document.body.appendChild(script);
+			document.body.appendChild(script); 
 	});
 });
 
-$(document).ready(function(){
-	// Register component   
+$(document).ready(function(){   
 	
-	Vue.component('app',{
-		props: {    
-			context: {           
-				type: String
-			},
-			avatar: {
-				default: 'img/avatar/avatar.png',
-				type: String
-			},  
-			email: {
-				default: 'jane-doe@pluralsight.com',
-				type: String
-			},
-			menu: {
-				default: 'learner',
-				type: String
-			},
-			name: {
-				default: 'Jane Doe',
-				type: String
-			}
-		},
-		template:"#app-template"
-	});
-	
-	Vue.component('app-header', { 
-		props: { 
-			email: {
-				default: 'jane-doe@pluralsight.com',
-				type: String
-			},
-			avatar: {
-				default: 'img/avatar/avatar.png',
-				type: String
-			},
-			name: {
-				default: 'Jane Doe',
-				type: String
-			}
-		},
-		template: '#app-header-template'
-	});
+	// Register component  
 	
 	Vue.component('app-search', {
 		props: {
 			
 		},
 		template: '#app-search-template'
-	});
-	
-	Vue.component('app-nav', {
-		props: {
-			context: {           
-				type: String
-			},			
-		},
-		template: "#app-nav-template"
-	});
-	
-	
-	Vue.component('carousel', { 
-		props: {
-			action: {
-				default: 'View All',
-				type: String
-			},  
-			description: {
-				default: '',
-				type: String
-			},
-			title: {
-				default: 'Carousel Title',
-				type: String
-			},
-			url: {
-				default: '#',
-				type: String
-			}
-		},
-	  	template: '#carousel-template'
-	});                                                          
-
-	Vue.component('card', {
-		props: {
-			image: {
-				default: 'http://placehold.it/400x200',
-				type: String
-			},   
-			overlay: {
-				default: true,
-				type: Boolean
-			},
-			metadata1: {
-				default: 'Metadata 1',
-				type: String
-			}, 
-			metadata2: {
-				default: 'Metadata 2',
-				type: String
-			},
-			state: {
-				default: "",
-				type: String
-			},
-			status: {  
-				default: 0,
-				type: Number
-			},
-			title: {
-				default: 'The Card Title',
-				type: String
-			}  
-		},                                                            
-		template: '#card-template'
-	}); 
+	});   
 	
 	Vue.component('hero',{
 		props: { 
@@ -154,8 +43,7 @@ $(document).ready(function(){
 			},
 			module: {
 				default: 'Module Name',
-				type: String
-				
+				type: String 
 			},
 			title: {
 				default: 'Hero title course',
@@ -164,72 +52,24 @@ $(document).ready(function(){
 		},
 		template: '#hero-template'
 	});  
+
 	
-	Vue.component('icon',{
-		props: {
-			fill: {
-				default: 'white',
-				type: String
-			},
-			name: {
-				default: 'home',
-				type: String
-			},
-			size: {
-				default: 'normal',
-				type: String
-			}
-		},
-		template: '#icon-template'
-	});
+
 	
-	var rows = [
-		{ title: 'Hello World' },
-		{ title: 'Hello World 2' },	
-	];
+ 
 	
-	Vue.component('bookmark',{
-		props: ['rows'],
-		template: '#bookmark-template'
-	});
-	
-	Vue.component('bookmark-row', {
-   		props: {   
-			author: {
-				default: 'Jan Doe',
-				type: String
-			},
-			created: {
-				default: null,
-				type: Date 
-			},
-			level: {
-				default: 'Beginner',
-				type: String
-			},
-			time: {
-				default: '2h 00m',
+	Vue.component('tile',{
+		props: {   
+			image: {
+				default: 'http://placehold.it/2h00x200',
 				type: String
 			},
 			title: {
-				default: 'Course title',
+				default: 'Techology',
 				type: String
 			}
 		},
-	  	template: '#bookmark-row-template',
-	    data: function(){   
-			// Calculate Date if property left empty.
-			if(this.created == null){ 
-				var date = new Date(); 
-				var monthNames = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul","Aug", "Sept", "Oct","Nov", "Dec"];
-
-			  	var day = date.getDate();
-			  	var monthIndex = date.getMonth();
-			  	var year = date.getFullYear();
-				
-				this.created = monthNames[monthIndex] + ' ' + day + ', ' + year;  
-			}
-		}
+		template: '#tile-template'
 	});
 
 
@@ -239,7 +79,17 @@ $(document).ready(function(){
 	});
 });
 
-$(document).ready(function(){
+$(document).ready(function(){  
+	
+	// Create carousel segments for scrolling.
+	$('.carousel--body').each(function(_i,_v){
+		_el = $(this); 
+		_c = _el.children().attr('class');  
+		_l = _el.attr('data-limits');
+		_d = _el.find('.'+_c);
+		for(i = 0; i < _d.length; i+=_l) { _d.slice(i, i+_l).wrapAll("<div class='carousel--segment'></div>"); } 
+	});                                         
+	
 	//css
 	$(document).on({
 		click:function(e){
@@ -248,6 +98,39 @@ $(document).ready(function(){
 			$('.search--editable').focus();
 		}
 	},'search input');
+	
+	$(document).on({
+		click:function(e){   
+			$('body').removeClass('nav--open');
+		}
+	},'.overlay');
+	
+	$(window).on({
+		resize:function(){     
+			$('body').removeClass('nav--open');     
+		}
+	});
+	
+	$(document).on({
+		click:function(e){        
+			$('body').addClass('nav--open');
+		}
+	},'.header--button');  
+	
+	$(document).on({
+		click:function(e){
+			e.preventDefault(); 
+			e.stopPropagation();
+			$('.menu').addClass('active');
+		}
+	},'.menu--icon');  
+	
+	/* Capture All Documents Listener */
+	$(document).on({
+		click:function(e){
+			$('.menu').removeClass('active');
+		}
+	});
 	
 	$(document).on({
 		keydown:function(e){

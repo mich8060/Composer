@@ -77,10 +77,8 @@
 .card {   
 	color:$white;
 	display:block;
-	flex: 1; 
-	height:244px;          
-	margin-right:16px; 
-	max-width:25%;    
+	flex: 1;                
+	margin-right:16px;   
 	text-decoration:none;  
 	
 	&:last-of-type {
@@ -94,12 +92,12 @@
 		top:12px;              
 	}  
 	
-	&--actionsheet { display:none;  }
+	&--actionmenu { display:none;  }
 	
 	&--head {      
 		background:$gray04;
 		cursor:pointer;
-		height:144px;
+		height:96px;
 		overflow:hidden;      
 		margin-bottom:8px;
 		position:relative;    
@@ -170,7 +168,7 @@
 	 	position:absolute;
 		top:50%;
 		transform:translate(-50%,-50%); 
-		transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;   
 		
 		&:hover {
 			transform:translate(-50%,-50%) scale(1.1); 
@@ -218,7 +216,7 @@
 }
 
 .carousel { 
-	margin-top:60px;  
+	margin-top:40px;   
 	
 	&--description {
 		@include type--sm;
@@ -232,7 +230,8 @@
 		margin:20px 0;
 		
 		a {
-			@include type--sm;
+			@include type--xs;
+			@include type_weight--book;
 		}
 	}
 	
@@ -240,7 +239,7 @@
 		margin-left:auto;
 	}
 	
-	&--segment{
+	&--segment {
 		display:flex; 
 		flex-wrap: nowrap;         
 	}
@@ -340,14 +339,16 @@
 }
 
 .hero {
-	display:flex;
+	display:flex;               
+	margin-right:16px;
+	width:100%;
 	
 	&--content {  
 		background-size:cover;
 		background-repeat: no-repeat;
-		height:350px;
+		height:280px;
 		position:relative;
-		width:50%; 
+		width:100%; 
 		
 		.progress { 
 			bottom:0;
@@ -401,22 +402,34 @@
 		right:0;
 		top:0;
 	}
-	
-	&--resources {  
-		background:$gray05;
-		padding:30px;
-		width:50%;
-	}
+
 	
 	&--title {
-		@include type--xl;
+		@include type--lg;
 		@include type_weight--medium;
 		margin-bottom:24px;
 	}
 	
 	&--subtitle {
-		@include type--md;
+		@include type--sm;
 	}
+}
+
+.galaxy {        
+	background:#000; 
+	display:none;
+	height:200px;  
+	margin:0 -60px 24px;
+	padding:20px 60px;
+}
+
+.main {            
+	margin:0 auto; 
+	max-width:1600px; 
+	padding:92px 20px;                 
+	
+	@include breakpoint(sm) { padding:92px 90px 90px 150px; }  
+	@include breakpoint(lg) { padding:92px 60px 90px 280px; }
 }
 
 .menu {     
@@ -553,18 +566,18 @@
 			text-decoration:none;
 			
 			span {  
-				.iconFill { 
-					fill:$white;                      
+				svg {
+					fill:$white;  
 				}
 			}
 		} 
 	
-		span {
-			font-weight:300;   
-			               
-			.iconFill { 
-				fill:$gray02;   
-		 		transition: all .15s ease-in-out;
+		span {            
+			font-weight:300;                 
+	
+			svg {      
+				fill:$gray02;    
+	 			transition: all .15s ease-in-out;
 			}
 			
 			&:first-of-type { flex:0 0 60px; padding:0 18px; }
@@ -574,9 +587,7 @@
 			color:$orange; 
 			
 			span {  
-				.iconFill { 
-					fill:$orange;                      
-				}
+				svg { fill:$orange;  }
 			}
 		}
 		
@@ -739,5 +750,39 @@
 		margin-bottom:24px;
 	}
 }
+
+.tile {          
+	background:$gray05; 
+	flex: 1 0 auto;  
+	height:250px;              
+	margin-right:16px;
+	padding:20px;                 
+	text-align:center;     
+	max-width:16%;  
+	
+	&:last-of-type {
+		margin-right:0;
+	}  
+	
+	&--action {
+		padding-top:20px;
+	}
+	
+	&--image {   
+		height:50px;
+		margin:16px auto;
+		width:50px;
+	}
+	
+	&--title {   
+		@include type--md;
+		@include type_weight--light; 
+		margin:24px 0;       
+		overflow: hidden;    
+		text-overflow: ellipsis;     
+		white-space: nowrap;        
+	}
+}
+
 
 

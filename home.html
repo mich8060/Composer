@@ -7,62 +7,48 @@
 <link rel="stylesheet" href="css/screen.css" />
 </head>
 <body>   
-<app id="app">     
-	<div slot="content"> 
-		
-		<div class="search--overlay">
-			<div class="search--container">
-				<div class="search--title">Search</div> 
-				<div class="search--editable" contenteditable="true"></div>
-				<div class="search--close">
-					<span class="icon">
-						<svg viewBox="0 0 24 24" version="1.1">
-							<title>Close icon</title>
-							<g class="iconFill---2TaXY">
-								<polygon points="22 0 24 2 2 24 0 22"></polygon>
-								<polygon transform="translate(12, 12) scale(-1, 1) translate(-12, -12) " points="22 0 24 2 2 24 0 22"></polygon>
-							</g>
-						</svg>
-					</span>
-				</div>
-				<ul class="search--list"></ul> 
+<app id="app" context="home" name="Michael Stevens"> 
+	
+	    
+	<div class="search--overlay">
+		<div class="search--container">
+			<div class="search--title">Search</div> 
+			<div class="search--editable" contenteditable="true"></div>
+			<div class="search--close">
+				<span class="icon">
+					<svg viewBox="0 0 24 24" version="1.1">
+						<title>Close icon</title>
+						<g class="iconFill---2TaXY">
+							<polygon points="22 0 24 2 2 24 0 22"></polygon>
+							<polygon transform="translate(12, 12) scale(-1, 1) translate(-12, -12) " points="22 0 24 2 2 24 0 22"></polygon>
+						</g>
+					</svg>
+				</span>
 			</div>
-		</div>  
-		
-		       
-		<div class="headline lg">Home</div>
-		                                          
-		
-		<hero
-			title="Introduction to CSS for Designers"  
-			image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg"
-			module="Introduction and Project Overview"
-			length="55s"
-			metadata1="Susan Simkins &bull; Beginner"
-			metadata2="0m of 1h 48m"></hero>                 
-			
-			          
-		<carousel title="History">
-			<div class="carousel--segment" slot="body">  
-				<Card
-					image="https://pluralsight.imgix.net/course-images/audience/software-development.jpg" 
-					metadata1="Esteban Herrera &bull; Intermediate"
-					metadata2="1m watched" 
-					status="0"
-					title="Java Fundamentals: Exception Handling" /></Card> 
+			<ul class="search--list"></ul> 
+		</div>
+	</div>    
+	
+	<div class="galaxy"></div>         
+	
+	<div style="display:flex;">
+		<div style="width:40%;margin-right:16px">
+			<hero
+				title="Introduction to CSS for Designers"  
+				image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg"
+				module="Introduction and Project Overview"
+				length="55s"
+				metadata1="Susan Simkins &bull; Beginner"
+				metadata2="0m of 1h 48m"></hero>
+		</div>
+		<div style="width:60%;">
+			<carousel title="History" limit="3">
 				<Card  
-					image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
-					metadata1="Brain Treese &bull; Intermediate"
-					metadata2="57m watched"  
+					image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg" 
+					metadata1="Susan Simkins &bull; Beginner"
+					metadata2="0m of 1h 48m"  
 					status="77.0415"
-					title="Modern Web Layout with Flexbox and CSS Grid">
-				</Card> 
-				<Card  
-					image="https://pluralsight.imgix.net/course-images/react-js-getting-started-v1.jpg" 
-					metadata1="Samer Buna &bull; Beginner"
-					metadata2="53m watched"  
-					status="77.0415"
-					title="React.js: Getting Started">
+					title="Introduction to CSS for Designers"> 
 				</Card>
 				<Card  
 					image="https://pluralsight.imgix.net/course-images/experience-design-cc-fundamentals-v1.jpg" 
@@ -70,107 +56,176 @@
 					metadata2="" 
 					state="Completed" 
 					status="100"
-					title="Adobe Experience Design CC (Preview) Fundamentals">
-					<div slot="actionsheet">
-						<actionsheet></actionsheet>
-					</div>
-				</Card>
-			</div>
-		</carousel>  
-		
-		<carousel title="Channels" description="Save, organize and share your favorite content to help accomplish your objectives.">
-			<div class="carousel--segment" slot="body">   
-				<Card
-					image="img/channels/Front_End_Development.jpg" 
-					metadata1="Michael Stevens &bull; 1 followers"
-					overlay="false"       
-					title="Front End Development">
+					title="Adobe Experience Design CC (Preview) Fundamentals"> 
 				</Card> 
 				<Card  
-					image="img/channels/analytics.jpg" 
-					metadata1="Michael Stevens &bull; 1 followers"
-					overlay="false"  
-					title="Analytics">
-				</Card> 
-				<Card  
-					image="img/channels/back_end_development.jpg" 
-					metadata1="Michael Stevens &bull; 1 followers"
-					overlay="false" 
-					title="Back End Development">
+					image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
+					metadata1="Brain Treese &bull; Intermediate"
+					metadata2="57m watched"  
+					status="77.0415"
+					title="Modern Web Layout with Flexbox and CSS Grid">  
 				</Card>
-				<Card  
-					image="img/channels/ux.jpg" 
-					metadata1="Cole Quartuccio &bull; 21 followers"
-					overlay="false"        
-					title="UX Design at Pluralsight">
-				</Card>
-			</div>
-		</carousel>
-		
-		
-		
-		<carousel title="Paths" action="">
-			<div class="carousel--segment" slot="body">   
-				<Card
-					image="img/technology/angular-14a0f6532f.png" 
-					metadata1="7 Courses &bull; 31 Hours"  
-					status="3"
-					title="Angular">
-				</Card> 
-				<Card  
-					image="img/technology/html5-7ac65c8ec0.png" 
-					metadata1="11 Courses &bull; 35 Hours"   
-					status="0" 
-					title="HTML5">
-				</Card> 
-				<Card  
-					image="img/technology/css-c9b214f0d7.png" 
-					metadata1="8 Courses &bull; 27 Hours" 
-					status="0"
-					title="CSS">
-				</Card>
-				<Card  
-					image="img/technology/angular-14a0f6532f.png" 
-					metadata1="14 Courses &bull; 55 Hours"    
-					status="0"
-					title="AngularJS">
-				</Card> 
-				<Card  
-					image="img/technology/jquery-c93ba170c1.png" 
-					metadata1="8 Courses &bull; 27 Hours"    
-					status="0"
-					title="jQuery">
-				</Card>
-				<Card  
-					image="img/technology/javascript-36f5949a45.png" 
-					metadata1="10 Courses &bull; 24 Hours"    
-					status="0"
-					title="JavaScript">           
-				</Card>
-			</div>
-		</carousel>  
-		
-		<carousel title="Bookmarks">
-			<div slot="body">
-				<bookmark>
-					<div slot="rows">
-						<bookmark-row title="Introduction to Sketch" level="Beginner" time="2h 14m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row>
-				  		<bookmark-row title="Creating a Style Guide with Sketch" level="Intermediate" time="5h 5m" author="Stewart Hines" created="Mar 1, 2017"></bookmark-row> 
-				  		<bookmark-row title="Website Planning and Design in Sketch" level="Advanced" time="1h 45m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row> 
-				  		<bookmark-row title="Adobe Experience Design CC (Preview) Fundamentals" level="Beginner" time="1h 5m" author="Matthew Pizzi" created="Nov 7, 2016"></bookmark-row>
-				  		<bookmark-row title="Introduction to Mongoose for Node.js and MongoDB" level="Intermediate" time="1h 41m" author="Mark Scott" created="Oct 14, 2016"></bookmark-row>
-					</div>
-				</bookmark>  
-			</div>
-		</carousel>
-		
-		
-		
-	</div>                                                                    
-
+			</carousel>
+		</div>
+	</div>        
+    
+	<Carousel title="Recommended" action=""> 
+		<Card
+			image="https://pluralsight.imgix.net/course-images/react-flux-building-applications-v2.png" 
+			metadata1="Cory House &bull; Intermediate"
+			metadata2="3m watched"  
+			status="1"
+			title="Building Applications with React and Flux">                       
+		</Card>
+		<Card
+			image="	https://pluralsight.imgix.net/course-images/designing-duotone-photoshop-indesign-v1.jpg" 
+			metadata1="Pariah Burke &bull; Intermediate"
+			metadata2="0m watched"  
+			status="0"
+			title="Designing in Duotone in Photoshop and InDesign"> 
+		</Card>
+		<Card
+			image="	https://pluralsight.imgix.net/course-images/front-end-web-app-html5-javascript-css-v1.jpg" 
+			metadata1="Shawn Wildermuth &bull; Beginner"
+			metadata2="0m watched"  
+			status="0"
+			title="Front-End Web Development Quick Start With HTML5, CSS, and JavaScript">
+		</Card>
+		<Card
+			image="https://pluralsight.imgix.net/course-images/after-effects-using-live-text-premiere-pro-2481-v1.jpg" 
+			metadata1="Laura Hawk &bull; Intermediate"
+			metadata2="0m watched"  
+			status="0"
+			title="Using Live Text with After Effects and Premiere Pro">
+		</Card>
+		<Card
+			image="https://pluralsight.imgix.net/course-images/audience/software-development.jpg" 
+			metadata1="Matt Milner &bull; Beginner"
+			metadata2="3m watched"  
+			status="1"
+			title="HTML Fundamentals">
+		</Card>
+	</Carousel> 
+	            
+	<carousel title="Channels" description="Save, organize and share your favorite content to help accomplish your objectives.">
+		<Card
+			image="img/channels/Front_End_Development.jpg" 
+			metadata1="Michael Stevens &bull; 1 followers"
+			overlay="false"       
+			title="Front End Development">
+		</Card> 
+		<Card  
+			image="img/channels/analytics.jpg" 
+			metadata1="Michael Stevens &bull; 1 followers"
+			overlay="false"  
+			title="Analytics">
+		</Card> 
+		<Card  
+			image="img/channels/Prototyping.jpg" 
+			metadata1="Michael Stevens &bull; 1 followers"
+			overlay="false" 
+			title="Advanced Prototyping">
+		</Card>
+		<Card  
+			image="img/channels/back_end_development.jpg" 
+			metadata1="Michael Stevens &bull; 1 followers"
+			overlay="false" 
+			title="Back End Development">
+		</Card>
+		<Card  
+			image="img/channels/ux.jpg" 
+			metadata1="Cole Quartuccio &bull; 21 followers"
+			overlay="false"        
+			title="UX Design at Pluralsight">
+		</Card>
+	</carousel> 
+	
+	<carousel title="Paths" action="" limit="6">
+		<Card
+			image="img/technology/angular-14a0f6532f.png" 
+			metadata1="7 Courses &bull; 31 Hours"  
+			status="3"
+			title="Angular">
+		</Card> 
+		<Card  
+			image="img/technology/html5-7ac65c8ec0.png" 
+			metadata1="11 Courses &bull; 35 Hours"   
+			status="0" 
+			title="HTML5">
+		</Card> 
+		<Card  
+			image="img/technology/css-c9b214f0d7.png" 
+			metadata1="8 Courses &bull; 27 Hours" 
+			status="0"
+			title="CSS">
+		</Card>
+		<Card  
+			image="img/technology/angular-14a0f6532f.png" 
+			metadata1="14 Courses &bull; 55 Hours"    
+			status="0"
+			title="AngularJS">
+		</Card> 
+		<Card  
+			image="img/technology/jquery-c93ba170c1.png" 
+			metadata1="8 Courses &bull; 27 Hours"    
+			status="0"
+			title="jQuery">
+		</Card>
+		<Card  
+			image="img/technology/javascript-36f5949a45.png" 
+			metadata1="10 Courses &bull; 24 Hours"    
+			status="0"
+			title="JavaScript">           
+		</Card>
+	</carousel>  
+	
+	<carousel title="Bookmarks">
+		<bookmark>
+			<bookmark-row title="Introduction to Sketch" level="Beginner" time="2h 14m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row>
+	  		<bookmark-row title="Creating a Style Guide with Sketch" level="Intermediate" time="5h 5m" author="Stewart Hines" created="Mar 1, 2017"></bookmark-row> 
+	  		<bookmark-row title="Website Planning and Design in Sketch" level="Advanced" time="1h 45m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row> 
+	  		<bookmark-row title="Adobe Experience Design CC (Preview) Fundamentals" level="Beginner" time="1h 5m" author="Matthew Pizzi" created="Nov 7, 2016"></bookmark-row>
+	  		<bookmark-row title="Introduction to Mongoose for Node.js and MongoDB" level="Intermediate" time="1h 41m" author="Mark Scott" created="Oct 14, 2016"></bookmark-row>
+		</bookmark>
+	</carousel>
+	
+	<carousel title="Get your Skill IQ in your areas of interest" limit="6"> 
+		<Tile
+			image="https://pluralsight2.imgix.net/paths/images/scrum-a5c44d8364.png?trim=color&h=50"
+			title="Using the Scrum Framework"> 
+		</Tile>
+		<Tile
+			image="https://pluralsight.imgix.net/paths/path-icons/illustrator-6035a970d1.png?trim=color&h=50"
+			title="Illustrator CC for Creative Professionals"> 
+		</Tile>
+		<Tile
+			image="https://pluralsight2.imgix.net/paths/images/photoshop-e26c2b1bff.png?trim=color&h=50"
+			title="Photoshop for Creative Professionals"> 
+		</Tile>
+		<Tile
+			image="https://pluralsight.imgix.net/paths/path-icons/indesign-dd4d3dcd74.png?trim=color&h=50"
+			title="InDesign CC for Creative Professionals"> 
+		</Tile>
+		<Tile
+			image="https://pluralsight2.imgix.net/paths/images/angular-14a0f6532f.png?trim=color&h=50"
+			title="Angular"> 
+		</Tile>
+		<Tile
+			image="https://pluralsight2.imgix.net/paths/images/react-0f6558f88f.png?trim=color&h=50"
+			title="React"> 
+		</Tile>
+	</carousel>
 </app>                                                                        
-<script src="js/vue.js"></script>
+<script src="js/vue.js"></script>             
+<script src="components/app.js"></script>  
+<script src="components/app-header.js"></script> 
+<script src="components/app-nav.js"></script>
+<script src="components/bookmark.js"></script> 
+<script src="components/bookmark-row.js"></script> 
+<script src="components/card.js"></script> 
+<script src="components/carousel.js"></script>  
+<script src="components/icon.js"></script> 
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/jquery.pluralsight.js"></script>	 
+<script src="js/jquery.pluralsight.js"></script> 
 </body>
 </html>
