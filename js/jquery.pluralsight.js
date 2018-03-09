@@ -1,94 +1,37 @@
-var data = 'app-search hero tile';
-	data = data.split(" ");   
-
-// Component Loader
-$.each(data,function(_i,_v){  	                           
-	$(document).load("./components/"+_v+".html",function(response, status, xhr){       
-		var script = document.createElement('script');
-			script.type = 'text/x-template';
-			script.id = _v+'-template';
-			script.text = response;         
-			document.body.appendChild(script); 
-	});
-});
-
-$(document).ready(function(){   
+$(document).ready(function(){  
 	
-	// Register component  
-	
-	Vue.component('app-search', {
-		props: {
-			
-		},
-		template: '#app-search-template'
-	});   
-	
-	Vue.component('hero',{
-		props: { 
-			image: {
-				default: 'http://placehold.it/400x200',
-				type: String
-			},  
-			length: {
-				default: '20m',
-				type: String
-			}, 
-			metadata1: {
-				default: 'Metadata 1',
-				type: String
-			}, 
-			metadata2: {
-				default: 'Metadata 2',
-				type: String
-			},
-			module: {
-				default: 'Module Name',
-				type: String 
-			},
-			title: {
-				default: 'Hero title course',
-				type: String
-			} 
-		},
-		template: '#hero-template'
-	});  
-
-	
-
-	
- 
-	
-	Vue.component('tile',{
-		props: {   
-			image: {
-				default: 'http://placehold.it/2h00x200',
-				type: String
-			},
-			title: {
-				default: 'Techology',
-				type: String
-			}
-		},
-		template: '#tile-template'
-	});
-
-
-	// Create a root instance
+	// Create a root instance  
 	new Vue({
 	  	el: '#app'
 	});
-});
-
-$(document).ready(function(){  
 	
-	// Create carousel segments for scrolling.
-	$('.carousel--body').each(function(_i,_v){
-		_el = $(this); 
-		_c = _el.children().attr('class');  
-		_l = _el.attr('data-limits');
-		_d = _el.find('.'+_c);
-		for(i = 0; i < _d.length; i+=_l) { _d.slice(i, i+_l).wrapAll("<div class='carousel--segment'></div>"); } 
-	});                                         
+	// Create carousel segments for scrolling. 
+	if($('.carousel').length){    
+		 
+		$('.carousel').each(function(){     
+			var el = $(this);    
+			  
+			_el = el.find('.carousel--body'); 
+			_c = _el.children().attr('class');  
+			_l = _el.attr('data-limits');
+			_d = _el.find('.'+_c);  
+			
+			for(i = 0; i < _d.length; i+=_l) { _d.slice(i, i+_l).wrapAll($('<div class="carousel--segment" />')); }  
+			_count = el.find('.carousel--segment').length;         
+			if(_count > 1){        
+				svg = $('<svg viewBox="0 0 30 30"><g transform="translate(10,0)"><path d="M14.5,15L14.5,15L2.4,0L0,2l10.6,13L0,28l2.4,2L14.5,15L14.5,15z"/></g></svg>');
+				icon = $('<span />').attr('class','icon md white').append(svg);  
+		   		control = $('<div />').attr('class','carousel--control').append(icon);                                          
+				el.append(control);  
+				
+				for(x = 0; x < _count;x++){   
+					el.find('.carousel--indicator ul').append($('<li />'));
+				} 
+				
+				el.find('.carousel--indicator li').first().addClass('active');                                                                                  
+			}                                                                                                                        
+		});
+	}                                 
 	
 	//css
 	$(document).on({

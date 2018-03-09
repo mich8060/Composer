@@ -18,7 +18,7 @@ Vue.component('carousel', {
 	props: {
 		action: 		{ default: 'View All', type: String },  
 		description: 	{ default: '', type: String }, 
-		limit: 			{ default: 5, type: Number },
+		limit: 			{ default: 5, type: Number },       
 		title: 			{ default: 'Carousel Title', type: String },
 		url: 			{ default: '#', type: String }
 	}

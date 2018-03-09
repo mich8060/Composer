@@ -1,3 +1,13 @@
+* { box-sizing:border-box; } 
+
+html, body { 
+	background:#181818; 
+	color:#fff; 
+	font-family: 'Gotham SSm A','Gotham SSm B','Gotham',sans-serif;            
+	margin:0; 
+	padding:0;
+}   
+
 a {
 	color:$orange;
 	text-decoration:none; 
@@ -8,8 +18,7 @@ a {
 		text-decoration:underline;
 	}
 } 
-
-
+      
 .button {
   	display: inline-flex;
   	justify-content: center;
@@ -214,12 +223,44 @@ a {
   align-items: center;
 }
 
-
+input[type="checkbox"] { 
+	display:none;        
+	
+	&:checked {
+		& + label {  
+			&:before {             
+		   		background:$orange url('../img/layout/checkmark@2x.png') no-repeat center center; 
+				background-size:10px 8px;
+				border:solid 1px $orange;
+			}
+		}
+	}
+	
+	& + label {   
+		display:block;          
+		padding-left:32px; 
+		position:relative;
+		width:100%;
+		
+		&:before {
+			border:solid 1px $gray01;
+			border-radius:2px;   
+			content:"";
+			display:block;
+			height:16px;  
+			left:0;
+			position:absolute;  
+			top:50%;
+			transform:translateY(-50%);
+			width:16px;
+		}
+	}
+}
 
 .icon {
 	display: inline-block;
     height: 24px;
-    width: 24px;
+    width: 24px;             
 
  	svg { width:100%; }
 
@@ -228,6 +269,7 @@ a {
 	&.white { fill:$white; }  
 	&.gray01 { fill:$gray01; } 
 	&.gray02 { fill:$gray02; }
+	&.gray03 { fill:$gray03; }
 
 	&.sm {
 		height: 16px;
@@ -254,7 +296,8 @@ a {
 	display:flex; 
 	
 	li { 
-		background:$gray02; 
+		background:$gray02;   
+		cursor:pointer;
 		display:block; 
 		height:2px;
 		margin:0 2px; 

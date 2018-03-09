@@ -1,0 +1,118 @@
+@import "_mixins";    
+@import "_styles";
+
+html, body {
+	background:#fff; 
+	color:#000;
+}
+
+.composer {
+	
+	p {
+		max-width:800px;
+	}
+	
+	&--aside {   
+		background:#ddd;
+		bottom:0;
+		left:0;
+		position:fixed;
+		top:0; 
+		width:280px;
+		
+		a {      
+			border-bottom:solid 1px #fff;
+			color:#000;
+			display:block;
+			padding:8px 20px;
+		}
+	}
+	
+	&--body {  
+		padding-left:280px;     
+	}
+	
+	&--headline {
+		@include type--xl;
+		@include type_weight--bold; 
+	}
+	
+	&--navigation {
+		float:right; 
+		
+		a {
+			
+		}
+	} 
+	  
+	
+	&--main {            
+		margin:0 auto;
+		max-width:1200px;  
+		padding:40px 80px;   
+		outline:solid 1px red;        
+	}
+	
+	&--pre {     
+		background:$gray00;
+		border-left:solid 4px $pink;  
+		margin-bottom:12px;
+		padding:8px 12px; 
+		
+		&:focus {
+			outline:solid 1px $pink;
+		}
+	}
+	
+	&--sample {
+		background:$gray06;
+		margin-bottom:12px;
+		padding:20px;
+	}
+	
+	&--section {
+		margin:40px 0;
+	}
+	
+	&--subheader {
+		@include type--md;
+		@include type_weight--bold; 
+	}
+	
+	&--table {  
+		border:solid 1px #ddd;
+		border-collapse: collapse;
+		empty-cells:show;        
+		margin:20px 0;
+		width:100%;
+		
+
+		
+		tbody {  
+			tr { 
+				border-bottom:solid 1px #ddd;          
+				
+				&:nth-child(even){
+					background:$gray00;
+				}
+			}
+			
+			td {         
+				@include type--sm;          
+				padding:8px;
+				vertical-align:top;
+			}
+		}
+		
+		thead {
+			th {        
+				@include type--sm;     
+				@include type_weight--bold; 
+	  			background:$gray00;  
+		  		border-bottom:solid 1px #ddd;
+				padding:8px;
+				text-align:left;
+			}
+		}
+	}
+}

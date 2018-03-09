@@ -7,8 +7,7 @@
 <link rel="stylesheet" href="css/screen.css" />
 </head>
 <body>   
-<app id="app" context="home" name="Michael Stevens"> 
-	
+<app id="app" context="home">    
 	    
 	<div class="search--overlay">
 		<div class="search--container">
@@ -47,7 +46,7 @@
 					image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg" 
 					metadata1="Susan Simkins &bull; Beginner"
 					metadata2="0m of 1h 48m"  
-					status="77.0415"
+					progress="77.0415"
 					title="Introduction to CSS for Designers"> 
 				</Card>
 				<Card  
@@ -55,55 +54,69 @@
 					metadata1="Brain Treese &bull; Intermediate"
 					metadata2="" 
 					state="Completed" 
-					status="100"
+					progress="100"
 					title="Adobe Experience Design CC (Preview) Fundamentals"> 
 				</Card> 
 				<Card  
 					image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
 					metadata1="Brain Treese &bull; Intermediate"
 					metadata2="57m watched"  
-					status="77.0415"
+					progress="77.0415"
+					title="Modern Web Layout with Flexbox and CSS Grid">  
+				</Card> 
+				<Card  
+					image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
+					metadata1="Brain Treese &bull; Intermediate"
+					metadata2="57m watched"  
+					progress="77.0415"
 					title="Modern Web Layout with Flexbox and CSS Grid">  
 				</Card>
 			</carousel>
 		</div>
 	</div>        
     
-	<Carousel title="Recommended" action=""> 
+	<Carousel title="Recommended" limit="5" action=""> 
 		<Card
 			image="https://pluralsight.imgix.net/course-images/react-flux-building-applications-v2.png" 
 			metadata1="Cory House &bull; Intermediate"
 			metadata2="3m watched"  
-			status="1"
+			progress="1"
 			title="Building Applications with React and Flux">                       
 		</Card>
 		<Card
 			image="	https://pluralsight.imgix.net/course-images/designing-duotone-photoshop-indesign-v1.jpg" 
 			metadata1="Pariah Burke &bull; Intermediate"
 			metadata2="0m watched"  
-			status="0"
+			progress="0"
 			title="Designing in Duotone in Photoshop and InDesign"> 
 		</Card>
 		<Card
 			image="	https://pluralsight.imgix.net/course-images/front-end-web-app-html5-javascript-css-v1.jpg" 
 			metadata1="Shawn Wildermuth &bull; Beginner"
 			metadata2="0m watched"  
-			status="0"
+			progress="0"
 			title="Front-End Web Development Quick Start With HTML5, CSS, and JavaScript">
 		</Card>
 		<Card
 			image="https://pluralsight.imgix.net/course-images/after-effects-using-live-text-premiere-pro-2481-v1.jpg" 
 			metadata1="Laura Hawk &bull; Intermediate"
 			metadata2="0m watched"  
-			status="0"
+			progress="0"
 			title="Using Live Text with After Effects and Premiere Pro">
 		</Card>
 		<Card
 			image="https://pluralsight.imgix.net/course-images/audience/software-development.jpg" 
 			metadata1="Matt Milner &bull; Beginner"
 			metadata2="3m watched"  
-			status="1"
+			progress="1"
 			title="HTML Fundamentals">
+		</Card> 
+		<Card  
+			image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
+			metadata1="Brain Treese &bull; Intermediate"
+			metadata2="57m watched"  
+			progress="77.0415"
+			title="Modern Web Layout with Flexbox and CSS Grid">  
 		</Card>
 	</Carousel> 
 	            
@@ -137,6 +150,12 @@
 			metadata1="Cole Quartuccio &bull; 21 followers"
 			overlay="false"        
 			title="UX Design at Pluralsight">
+		</Card>  
+		<Card
+			image="img/channels/Front_End_Development.jpg" 
+			metadata1="Michael Stevens &bull; 1 followers"
+			overlay="false"       
+			title="Front End Development">
 		</Card>
 	</carousel> 
 	
@@ -150,31 +169,37 @@
 		<Card  
 			image="img/technology/html5-7ac65c8ec0.png" 
 			metadata1="11 Courses &bull; 35 Hours"   
-			status="0" 
+			progress="0" 
 			title="HTML5">
 		</Card> 
 		<Card  
 			image="img/technology/css-c9b214f0d7.png" 
 			metadata1="8 Courses &bull; 27 Hours" 
-			status="0"
+			progress="0"
 			title="CSS">
 		</Card>
 		<Card  
 			image="img/technology/angular-14a0f6532f.png" 
 			metadata1="14 Courses &bull; 55 Hours"    
-			status="0"
+			progress="0"
 			title="AngularJS">
 		</Card> 
 		<Card  
 			image="img/technology/jquery-c93ba170c1.png" 
 			metadata1="8 Courses &bull; 27 Hours"    
-			status="0"
+			progress="0"
 			title="jQuery">
 		</Card>
 		<Card  
 			image="img/technology/javascript-36f5949a45.png" 
 			metadata1="10 Courses &bull; 24 Hours"    
-			status="0"
+			progress="0"
+			title="JavaScript">           
+		</Card> 
+		<Card  
+			image="img/technology/javascript-36f5949a45.png" 
+			metadata1="10 Courses &bull; 24 Hours"    
+			progress="0"
 			title="JavaScript">           
 		</Card>
 	</carousel>  
@@ -187,7 +212,7 @@
 	  		<bookmark-row title="Adobe Experience Design CC (Preview) Fundamentals" level="Beginner" time="1h 5m" author="Matthew Pizzi" created="Nov 7, 2016"></bookmark-row>
 	  		<bookmark-row title="Introduction to Mongoose for Node.js and MongoDB" level="Intermediate" time="1h 41m" author="Mark Scott" created="Oct 14, 2016"></bookmark-row>
 		</bookmark>
-	</carousel>
+	</carousel>  
 	
 	<carousel title="Get your Skill IQ in your areas of interest" limit="6"> 
 		<Tile
@@ -214,17 +239,27 @@
 			image="https://pluralsight2.imgix.net/paths/images/react-0f6558f88f.png?trim=color&h=50"
 			title="React"> 
 		</Tile>
+		<Tile
+			image="https://pluralsight2.imgix.net/paths/images/react-0f6558f88f.png?trim=color&h=50"
+			title="React"> 
+		</Tile>
 	</carousel>
 </app>                                                                        
-<script src="js/vue.js"></script>             
+<script src="js/vue.js"></script>  
+<script src="components/actionmenu.js"></script>           
 <script src="components/app.js"></script>  
 <script src="components/app-header.js"></script> 
-<script src="components/app-nav.js"></script>
+<script src="components/app-nav.js"></script> 
+<script src="components/app-search.js"></script>
+<script src="components/button.js"></script>
 <script src="components/bookmark.js"></script> 
 <script src="components/bookmark-row.js"></script> 
 <script src="components/card.js"></script> 
-<script src="components/carousel.js"></script>  
+<script src="components/carousel.js"></script>
+<script src="components/checkbox.js"></script>
+<script src="components/hero.js"></script>  
 <script src="components/icon.js"></script> 
+<script src="components/tile.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery.pluralsight.js"></script> 
 </body>

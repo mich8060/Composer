@@ -33,6 +33,128 @@
 	}
 } 
 
+.actionmenu {    
+	@include type--sm;   
+  	list-style: none;  
+  	position: absolute; 
+  	max-width: 320px;
+  	min-width: 220px; 
+	display:none;
+
+  	&.origin {  
+		&-bottomRight {                
+		  	bottom: 0;
+		  	right: -8px;
+		}
+		
+		&-topRight {                   
+		  	right: -8px;
+		  	top: 0;
+		}
+		
+		&-topLeft {
+		  transform: translateX(calc(-1 * 8px));
+		  left: 0;
+		  top: 0;
+		}
+		
+		&-bottomLeft {
+		  transform: translateX(calc(-1 * 8px));
+		  left: 0;
+		  bottom: 0;
+		}	
+	} 
+	
+	a,
+	span {            
+	  	align-items: center;  
+	  	background: none; 
+ 		border-radius: 2px; 
+		color:$black;
+	  	border: none;
+	  	cursor: pointer;
+ 	  	display: flex;
+	  	font-weight: 500;
+	  	line-height: 28px;
+	  	overflow: hidden; 
+		padding:0 16px;  
+	  	position: relative;
+	  	text-align: left;
+	 	text-decoration:none;
+	  	text-overflow: ellipsis; 
+	  	transition: background 100ms;
+	  	white-space: nowrap;
+	  	width: 100%;  
+	}
+	
+	ul {              
+  		background:$white;
+  		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);     
+		list-style-type:none;
+		margin:0;          
+		
+		&:last-of-type{
+			border:none;
+		}
+		
+		li {       
+			list-style-type:none;
+			margin:0;
+			padding:0;            
+			position:relative; 
+			overflow:hidden;
+			
+			&:hover {
+				background:$gray00;  
+				overflow:visible;
+			}                                       
+			
+			&.line { 
+				border-bottom:solid 1px $gray01;
+				margin:0;
+			} 
+			
+			&.remove {
+				a, span { color:$red; }
+			}
+			
+			&.title {   
+				color:$gray02;
+				cursor:default; 
+				font-size:10px;
+				font-weight:700;     
+				margin-top:8px;
+				padding:0 16px;
+				text-transform:uppercase;
+				
+				&:hover { background:transparent }
+			}
+			
+			ul {                           
+			  	max-width: 320px;
+			  	min-width: 160px; 
+	   			position:absolute;
+				right:0;              
+				top:0;
+				transform:translateX(100%);
+				
+				&:before {       
+			  		border-top: 4px solid transparent;
+			  		border-bottom: 4px solid transparent;
+                	border-left: 4px solid $gray03;        
+					content:"";
+					display:block; 
+				  	height: 0;   
+					left:-12px;
+					position:absolute;
+					top:10px;
+					width: 0;                       
+				}
+			}	
+		}
+	}
+}
+   
 .avatar {                     
 	border-radius:400px;
 	height:48px; 
@@ -78,7 +200,9 @@
 	color:$white;
 	display:block;
 	flex: 1;                
-	margin-right:16px;   
+	margin-right:16px; 
+	max-width:33.333%;   
+	position:relative;
 	text-decoration:none;  
 	
 	&:last-of-type {
@@ -87,18 +211,25 @@
 	
 	&--actions {  
 		display:block;   
+		opacity:0;       
+		pointer-events:none;
 		position:absolute;   
 		right:12px;
-		top:12px;              
+		top:12px; 
+		transition:opacity 0.15s ease-in-out;
+		z-index:999;  
+		
+		.icon {
+			margin-left:4px;
+		}                     
 	}  
 	
-	&--actionmenu { display:none;  }
+	&--actionmenu { position:relative; }
 	
 	&--head {      
 		background:$gray04;
 		cursor:pointer;
-		height:96px;
-		overflow:hidden;      
+ 		height:96px;       
 		margin-bottom:8px;
 		position:relative;    
 		
@@ -107,20 +238,15 @@
 			left:0;
 			right:0;
 			position:absolute;
-		}
-		
-		&[data-overlay="false"]{     
-			&:hover {
-				.card {
-					&--overlay {
-						opacity:0;
-					} 
-				}
-			}
 		} 
 		
 		&:hover {
-			.card {
+			.card {    
+				&--actions {
+					opacity:1;       
+					pointer-events:auto; 
+				}   
+			
 				&--overlay {
 					opacity:1;
 				} 
@@ -128,12 +254,21 @@
 		}
 	}  
 	
-	&--image {              
-		left:50%;
+	&--image {     
+		height:96px;         
+		left:50%;   
+		overflow:hidden;
 		position:absolute;
 		top:50%; 
 		transform:translate(-50%,-50%);
-		width:100%;
+		width:100%; 
+		
+		img {    
+			left:50%;
+			position:absolute;
+			top:50%; 
+			transform:translate(-50%,-50%);
+		}
 	}
               
 	&--metadata1,
@@ -216,7 +351,27 @@
 }
 
 .carousel { 
-	margin-top:40px;   
+	margin-top:40px;    
+	position:relative;      
+	
+	&--body {     
+		display:flex;
+		flex-wrap: nowrap;       
+	}     
+	
+	&--control {        
+		align-items:center;  
+		cursor:pointer;         
+		bottom:0;   
+		display:flex;
+		justify-content:center;  
+		position:absolute;    
+		right:-65px;
+		top:44px;
+		width:65px;  
+		
+		svg { fill:$white; }  
+	}
 	
 	&--description {
 		@include type--sm;
@@ -240,8 +395,13 @@
 	}
 	
 	&--segment {
-		display:flex; 
-		flex-wrap: nowrap;         
+		display:none;       
+		flex:1 0 100%;         
+		width:100%;  
+		
+		&:first-of-type {
+			display:flex;
+		}                 
 	}
 	
 	&--title {
