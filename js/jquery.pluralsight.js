@@ -1,4 +1,4 @@
-var data = 'app app-nav app-header app-search bookmark bookmark-row card carousel hero icon';
+var data = 'app app-nav app-header app-search bookmark bookmark-row card carousel hero icon tile';
 	data = data.split(" ");
 	console.log(data);
 
@@ -167,7 +167,7 @@ $(document).ready(function(){
 	
 	Vue.component('icon',{
 		props: {
-			fill: {
+			color: {
 				default: 'white',
 				type: String
 			},
@@ -230,6 +230,20 @@ $(document).ready(function(){
 				this.created = monthNames[monthIndex] + ' ' + day + ', ' + year;  
 			}
 		}
+	});  
+	
+	Vue.component('tile',{
+		props: {   
+			image: {
+				default: 'http://placehold.it/2h00x200',
+				type: String
+			},
+			title: {
+				default: 'Techology',
+				type: String
+			}
+		},
+		template: '#tile-template'
 	});
 
 
