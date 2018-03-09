@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var data = 'app app-nav app-header app-search bookmark bookmark-row card carousel hero icon tile';
 	data = data.split(" ");
 	console.log(data);
@@ -42,218 +43,43 @@ $(document).ready(function(){
 		},
 		template:"#app-template"
 	});
+=======
+$(document).ready(function(){  
 	
-	Vue.component('app-header', { 
-		props: { 
-			email: {
-				default: 'jane-doe@pluralsight.com',
-				type: String
-			},
-			avatar: {
-				default: 'img/avatar/avatar.png',
-				type: String
-			},
-			name: {
-				default: 'Jane Doe',
-				type: String
-			}
-		},
-		template: '#app-header-template'
-	});
-	
-	Vue.component('app-search', {
-		props: {
-			
-		},
-		template: '#app-search-template'
-	});
-	
-	Vue.component('app-nav', {
-		props: {
-			context: {           
-				type: String
-			},			
-		},
-		template: "#app-nav-template"
-	});
-	
-	
-	Vue.component('carousel', { 
-		props: {
-			action: {
-				default: 'View All',
-				type: String
-			},  
-			description: {
-				default: '',
-				type: String
-			},
-			title: {
-				default: 'Carousel Title',
-				type: String
-			},
-			url: {
-				default: '#',
-				type: String
-			}
-		},
-	  	template: '#carousel-template'
-	});                                                          
-
-	Vue.component('card', {
-		props: {
-			image: {
-				default: 'http://placehold.it/400x200',
-				type: String
-			},   
-			overlay: {
-				default: true,
-				type: Boolean
-			},
-			metadata1: {
-				default: 'Metadata 1',
-				type: String
-			}, 
-			metadata2: {
-				default: 'Metadata 2',
-				type: String
-			},
-			state: {
-				default: "",
-				type: String
-			},
-			status: {  
-				default: 0,
-				type: Number
-			},
-			title: {
-				default: 'The Card Title',
-				type: String
-			}  
-		},                                                            
-		template: '#card-template'
-	}); 
-	
-	Vue.component('hero',{
-		props: { 
-			image: {
-				default: 'http://placehold.it/400x200',
-				type: String
-			},  
-			length: {
-				default: '20m',
-				type: String
-			}, 
-			metadata1: {
-				default: 'Metadata 1',
-				type: String
-			}, 
-			metadata2: {
-				default: 'Metadata 2',
-				type: String
-			},
-			module: {
-				default: 'Module Name',
-				type: String
-				
-			},
-			title: {
-				default: 'Hero title course',
-				type: String
-			} 
-		},
-		template: '#hero-template'
-	});  
-	
-	Vue.component('icon',{
-		props: {
-			color: {
-				default: 'white',
-				type: String
-			},
-			name: {
-				default: 'home',
-				type: String
-			},
-			size: {
-				default: 'normal',
-				type: String
-			}
-		},
-		template: '#icon-template'
-	});
-	
-	var rows = [
-		{ title: 'Hello World' },
-		{ title: 'Hello World 2' },	
-	];
-	
-	Vue.component('bookmark',{
-		props: ['rows'],
-		template: '#bookmark-template'
-	});
-	
-	Vue.component('bookmark-row', {
-   		props: {   
-			author: {
-				default: 'Jan Doe',
-				type: String
-			},
-			created: {
-				default: null,
-				type: Date 
-			},
-			level: {
-				default: 'Beginner',
-				type: String
-			},
-			time: {
-				default: '2h 00m',
-				type: String
-			},
-			title: {
-				default: 'Course title',
-				type: String
-			}
-		},
-	  	template: '#bookmark-row-template',
-	    data: function(){   
-			// Calculate Date if property left empty.
-			if(this.created == null){ 
-				var date = new Date(); 
-				var monthNames = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul","Aug", "Sept", "Oct","Nov", "Dec"];
-
-			  	var day = date.getDate();
-			  	var monthIndex = date.getMonth();
-			  	var year = date.getFullYear();
-				
-				this.created = monthNames[monthIndex] + ' ' + day + ', ' + year;  
-			}
-		}
-	});  
-	
-	Vue.component('tile',{
-		props: {   
-			image: {
-				default: 'http://placehold.it/2h00x200',
-				type: String
-			},
-			title: {
-				default: 'Techology',
-				type: String
-			}
-		},
-		template: '#tile-template'
-	});
-
-
-	// Create a root instance
+	// Create a root instance  
 	new Vue({
 	  	el: '#app'
 	});
-});
+	
+	// Create carousel segments for scrolling. 
+	if($('.carousel').length){    
+		 
+		$('.carousel').each(function(){     
+			var el = $(this);    
+			  
+			_el = el.find('.carousel--body'); 
+			_c = _el.children().attr('class');  
+			_l = _el.attr('data-limits');
+			_d = _el.find('.'+_c);  
+			
+			for(i = 0; i < _d.length; i+=_l) { _d.slice(i, i+_l).wrapAll($('<div class="carousel--segment" />')); }  
+			_count = el.find('.carousel--segment').length;         
+			if(_count > 1){        
+				svg = $('<svg viewBox="0 0 30 30"><g transform="translate(10,0)"><path d="M14.5,15L14.5,15L2.4,0L0,2l10.6,13L0,28l2.4,2L14.5,15L14.5,15z"/></g></svg>');
+				icon = $('<span />').attr('class','icon md white').append(svg);  
+		   		control = $('<div />').attr('class','carousel--control').append(icon);                                          
+				el.append(control);  
+				
 
-$(document).ready(function(){
+				for(x = 0; x < _count;x++){   
+					el.find('.carousel--indicator ul').append($('<li />'));
+				} 
+				
+				el.find('.carousel--indicator li').first().addClass('active');                                                                                  
+			}                                                                                                                        
+		});
+	}                                 
+	                      
 	//css
 	$(document).on({
 		click:function(e){
@@ -262,6 +88,39 @@ $(document).ready(function(){
 			$('.search--editable').focus();
 		}
 	},'search input');
+	
+	$(document).on({
+		click:function(e){   
+			$('body').removeClass('nav--open');
+		}
+	},'.overlay');
+	
+	$(window).on({
+		resize:function(){     
+			$('body').removeClass('nav--open');     
+		}
+	});
+	
+	$(document).on({
+		click:function(e){        
+			$('body').addClass('nav--open');
+		}
+	},'.header--button');  
+	
+	$(document).on({
+		click:function(e){
+			e.preventDefault(); 
+			e.stopPropagation();
+			$('.menu').addClass('active');
+		}
+	},'.menu--icon');  
+	
+	/* Capture All Documents Listener */
+	$(document).on({
+		click:function(e){
+			$('.menu').removeClass('active');
+		}
+	});
 	
 	$(document).on({
 		keydown:function(e){

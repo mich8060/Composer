@@ -5,28 +5,9 @@
 @import "_elements";  
 @import "_components";  
 
-* { box-sizing:border-box; } 
 
-html, body { 
-	background:#181818; 
-	color:#fff; 
-	font-family: Gotham SSm A,Gotham SSm B, sans-serif;            
-	margin:0; 
-	padding:0;
-} 
       
-.main { 
-	height:3000px; 
-	margin:0 auto; 
-	max-width:1600px; 
-	padding:92px 20px;         
-	
-	@media only screen and (min-width:768px) { padding:92px 90px 90px 150px; }  
-	@media only screen and (min-width:1600px) { padding:92px 90px 90px 310px; }
-	
-	&--container {                
-	}
-}
+
   
 
 

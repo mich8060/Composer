@@ -1,0 +1,25 @@
+<div class="hero">
+	<div class="hero--content" v-bind:style="{ backgroundImage:'url('+image+')' }">
+		<div class="hero--overlay"></div>
+		<div class="hero--head"> 
+			<div class="hero--subtitle">Continue watching:</div>    
+			<div class="hero--title">{{title}}</div> 
+			<div class="hero--meta">
+				<div class="icon">
+				 	<svg viewBox="0 0 512 512" role="img" aria-label="Play"><title>Play</title><g class="defaultFill---3BX80"><path d="M255.5,512c-141.2,0-256-114.8-256-256S114.3,0,255.5,0s256,114.8,256,256S396.7,512,255.5,512z M255.5,24.4
+					C127.8,24.4,23.9,128.3,23.9,256s103.9,231.6,231.6,231.6c127.7,0,231.6-103.9,231.6-231.6S383.2,24.4,255.5,24.4z M194.5,134.1
+					v243.8L365.2,256L194.5,134.1z"></path></g></svg>   
+				</div>
+				<div class="hero--module">
+					<div>{{module}}</div>
+					<div>{{length}} to complete</div>
+				</div>
+			</div>
+		</div>
+		<div class="hero--foot">
+			<div>{{metadata1}}</div>
+			<div>{{metadata2}}</div>
+		</div>
+		<progress class="progress" value="1" max="100"></progress>                                                            
+	</div>
+</div>
