@@ -269,7 +269,9 @@ input[type="checkbox"] {
 	&.white { fill:$white; }  
 	&.gray01 { fill:$gray01; } 
 	&.gray02 { fill:$gray02; }
-	&.gray03 { fill:$gray03; }
+	&.gray03 { fill:$gray03; } 
+	
+	&.orange { fill:$orange; }
 
 	&.sm {
 		height: 16px;

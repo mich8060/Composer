@@ -3,11 +3,10 @@ Vue.component('card', {
 		<div class="card">           
 			<div class="card--head"> 
 				<a :href="href" class="card--overlay" v-if="overlay == true">
-					<div class="card--play"><icon name="play-circle" size="md"></icon></div>
+					<div class="card--play"><icon name="play-circle" size="lg"></icon></div>
 				</a>
 				<div class="card--actions" v-if="overlay == true">
-					<div class="card--actionbar">                       
-						<icon color="white" name="download" size="sm"></icon>
+					<div class="card--actionbar">                               
 						<icon color="white" name="more" size="sm"></icon>                                          
 					</div>
 					<div class="card--actionmenu">     

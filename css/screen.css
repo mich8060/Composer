@@ -197,6 +197,7 @@ input[type="checkbox"] + label:before { border: solid 1px #cccccc; border-radius
 .icon.gray01 { fill: #cccccc; }
 .icon.gray02 { fill: #aaaaaa; }
 .icon.gray03 { fill: #555555; }
+.icon.orange { fill: #f96816; }
 .icon.sm { height: 16px; width: 16px; }
 .icon.md { height: 36px; width: 36px; }
 .icon.lg { height: 48px; width: 48px; }
@@ -257,12 +258,12 @@ input[type="checkbox"] + label:before { border: solid 1px #cccccc; border-radius
 .card--actions { display: block; opacity: 0; pointer-events: none; position: absolute; right: 12px; top: 12px; transition: opacity 0.15s ease-in-out; z-index: 999; }
 .card--actions .icon { margin-left: 4px; }
 .card--actionmenu { position: relative; }
-.card--head { background: #363636; cursor: pointer; height: 96px; margin-bottom: 8px; position: relative; }
+.card--head { background: #363636; cursor: pointer; height: 144px; margin-bottom: 8px; position: relative; }
 .card--head progress { bottom: 0; left: 0; right: 0; position: absolute; }
 .card--head:hover .card--actions { opacity: 1; pointer-events: auto; }
 .card--head:hover .card--overlay { opacity: 1; }
-.card--image { height: 96px; left: 50%; overflow: hidden; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 100%; }
-.card--image img { left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); }
+.card--image { height: 144px; left: 50%; overflow: hidden; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 100%; }
+.card--image img { left: 50%; position: absolute; top: 50%; transform: translate(-50%, -50%); width: 100%; }
 .card--metadata1, .card--metadata2 { font-size: 12px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; color: #aaaaaa; line-height: type_height--compress; }
 .card--more { fill: #aaaaaa; transition: all 0.2s ease-in-out; }
 .card--more:hover { fill: #ffffff; }
@@ -309,14 +310,15 @@ input[type="checkbox"] + label:before { border: solid 1px #cccccc; border-radius
 @media only screen and (min-width: 600px) { .header--utilities { display: flex; } }
 
 .hero { display: flex; margin-right: 16px; width: 100%; }
-.hero--content { background-size: cover; background-repeat: no-repeat; height: 280px; position: relative; width: 100%; }
+.hero--content { background-size: cover; background-repeat: no-repeat; height: 346px; position: relative; width: 50%; }
 .hero--content .progress { bottom: 0; left: 0; position: absolute; right: 0; }
 .hero--head { left: 0; padding: 30px; position: absolute; right: 0; top: 0; }
-.hero--heading { font-size: 24px; line-height: 32px; letter-spacing: 0.32px; text-rendering: optimizeLegibility; word-wrap: normal; font-weight: 200; }
+.hero--heading { font-size: 24px; line-height: 32px; letter-spacing: 0.32px; text-rendering: optimizeLegibility; word-wrap: normal; font-weight: 200; margin-bottom: 12px; }
 .hero--foot { font-size: 14px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; bottom: 0; color: #cccccc; left: 0; padding: 30px; position: absolute; right: 0; }
 .hero--meta .icon { float: left; fill: #ffffff; margin-right: 12px; }
 .hero--module { font-size: 14px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; overflow: hidden; }
 .hero--overlay { background: linear-gradient(rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.9)); bottom: 0; left: 0; position: absolute; right: 0; top: 0; }
+.hero--resourses { background: #222222; padding: 30px; padding-bottom: 0; width: 50%; }
 .hero--title { font-size: 24px; line-height: 32px; letter-spacing: 0.32px; text-rendering: optimizeLegibility; word-wrap: normal; font-weight: 500; margin-bottom: 24px; }
 .hero--subtitle { font-size: 14px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; }
 
@@ -367,8 +369,10 @@ input[type="checkbox"] + label:before { border: solid 1px #cccccc; border-radius
 .points { font-weight: 200; border-bottom: 1px solid #555555; padding: 20px 0; }
 .points:last-of-type { border: none; }
 .points--action { font-size: 12px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; }
+.points--action a { display: flex; }
+.points--action a .icon { position: relative; top: -2px; }
 .points--content { overflow: hidden; }
-.points--icon { float: left; margin-right: 12px; }
+.points--icon { float: left; margin-right: 16px; }
 .points--title { font-size: 18px; line-height: 24px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; color: #f2f2f2; }
 
 .search input { appearance: none; display: none; font-family: inherit; padding: 0 10px 0 44px; height: 36px; line-height: 36px; outline: none; font-size: 14px; background-color: #363636; color: #aaa; border: none; border-radius: 2px; width: 100%; }
