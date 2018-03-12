@@ -347,7 +347,27 @@
 			text-decoration:none;
 		}
 	}   
-	
+	 
+	&--type {   
+		@include type--xxs;
+		@include type_weight--bold; 
+		align-items:center;
+		background:$gray05; 
+		border-radius:2px;
+		color:$white;
+		display:flex;  
+		left:0px;
+		padding:4px 8px;
+		position:absolute;   
+		text-transform:uppercase;
+		top:8px; 
+		z-index:99; 
+		
+		.icon {
+			margin-right:8px;
+		}
+		            
+	}
 
 }
 
