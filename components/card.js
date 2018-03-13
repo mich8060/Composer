@@ -19,8 +19,7 @@ Vue.component('card', {
 			</div>  
 			<div class="card--info">
 				<a :href="href" class="card--title">{{title}}</a> 
-				<div class="card--metadata1">{{metadata1}}</div>
-				<div class="card--metadata2">{{metadata2}}</div>
+				<div class="card--metadata1">{{metadata1}}</div>   
 				<div v-if="progress == 100" class="card--state">Complete</div>
 			</div>
 		</div>
