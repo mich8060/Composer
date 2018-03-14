@@ -42,7 +42,8 @@ $gradientVert:  linear-gradient(to bottom, #f05a28, #e80a89);
 @mixin type--lg 		{ font-size:24px; line-height:32px; letter-spacing: 0.32px; text-rendering:optimizeLegibility; word-wrap:normal; }
 @mixin type--md 		{ font-size:18px; line-height:24px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; } 
 @mixin type--sm 		{ font-size:14px; line-height:20px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; }
-@mixin type--xs 		{ font-size:12px; line-height:20px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; }
+@mixin type--xs 		{ font-size:12px; line-height:20px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; } 
+@mixin type--xxs 		{ font-size:10px; line-height:16px; letter-spacing: 0; 		text-rendering:optimizeLegibility; word-wrap:normal; }
 
 @mixin type_weight--xlight 	{ font-weight:100; }
 @mixin type_weight--light 	{ font-weight:200; }            

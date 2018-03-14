@@ -348,7 +348,21 @@
 		}
 	}   
 	
-
+    &--type {  
+		@include type--xxs;
+		@include type_weight--bold;
+		align-items:center;
+		background:$gray05;
+		display:flex;  
+		left:0;    
+		padding:4px 8px;
+		position:absolute; 
+		text-transform:uppercase;
+		top:12px;
+		z-index:99;  
+		
+		.icon { margin-right:6px; }
+	}
 }
 
 .carousel { 

@@ -1,7 +1,11 @@
 Vue.component('card', {                 
 	template: `                                                           
 		<div class="card">           
-			<div class="card--head"> 
+			<div class="card--head">
+			 	<div class="card--type" v-if="(type != 'channel' && type != 'path')">
+			    	<icon v-bind:name="type" color="white" size="sm"></icon>
+					{{type}}
+				</div>
 				<a :href="href" class="card--overlay" v-if="overlay == true">
 					<div class="card--play"><icon name="play-circle" size="lg"></icon></div>
 				</a>
@@ -31,7 +35,8 @@ Vue.component('card', {
 		metadata2: 	{ default: 'Metadata 2', type: String },   
 		overlay: 	{ default: true, type: Boolean },
 		progress: 	{ default: 0, type: Number },
-		title: 		{ default: 'The Card Title', type: String }  
+		title: 		{ default: 'The Card Title', type: String },
+		type: 		{ default: 'course', type:String }   
 	}
 });
 	
