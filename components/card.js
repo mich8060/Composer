@@ -1,6 +1,9 @@
 Vue.component('card', {                 
 	template: `                                                           
-		<div class="card">           
+		<div class="card" :class="{'condensed': condensed, 'active': active }">        
+		    <div class="card--detail" v-bind:style="{ backgroundImage: 'url(' + image + ')' }">
+		    	<hero :image="image" :metadata1="metadata1" :metadata2="metadata2" :title="title" :resume="resume" :progress="progress" :type="type"></hero>
+			</div>
 			<div class="card--head"> 
 				<a :href="href" class="card--overlay" v-if="overlay == true">
 					<div class="card--play"><icon name="play-circle" size="md"></icon></div>
@@ -19,19 +22,22 @@ Vue.component('card', {
 			</div>  
 			<div class="card--info">
 				<a :href="href" class="card--title">{{title}}</a> 
-				<div class="card--metadata1">{{metadata1}}</div>   
-				<div v-if="progress == 100" class="card--state">Complete</div>
+				<div class="card--metadata1">{{metadata1}}</div>               
 			</div>
 		</div>
 	`,
-	props: { 
+	props: {                   
+		active:  	{ default: false, type: Boolean },
+		condensed:  { default: false, type: Boolean },
 		href: 		{ default: '#', type: String }, 
 		image: 		{ default: 'http://placehold.it/400x200', type: String }, 
 		metadata1: 	{ default: 'Metadata 1', type: String }, 
 		metadata2: 	{ default: 'Metadata 2', type: String },   
 		overlay: 	{ default: true, type: Boolean },
 		progress: 	{ default: 0, type: Number },
-		title: 		{ default: 'The Card Title', type: String }  
+		resume: 	{ default: false, type: Boolean },
+		title: 		{ default: 'The Card Title', type: String },
+		type: 		{ default: 'course', type: String }  
 	}
 });
 	

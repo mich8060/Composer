@@ -7,75 +7,52 @@
 <link rel="stylesheet" href="css/screen.css" />
 </head>
 <body>   
-<app id="app" context="home">    
-	    
-	<div class="search--overlay">
-		<div class="search--container">
-			<div class="search--title">Search</div> 
-			<div class="search--editable" contenteditable="true"></div>
-			<div class="search--close">
-				<span class="icon">
-					<svg viewBox="0 0 24 24" version="1.1">
-						<title>Close icon</title>
-						<g class="iconFill---2TaXY">
-							<polygon points="22 0 24 2 2 24 0 22"></polygon>
-							<polygon transform="translate(12, 12) scale(-1, 1) translate(-12, -12) " points="22 0 24 2 2 24 0 22"></polygon>
-						</g>
-					</svg>
-				</span>
-			</div>
-			<ul class="search--list"></ul> 
-		</div>
-	</div>    
+<app id="app" context="home">   
 	
-	<div class="galaxy"></div>         
-	
-	<div style="display:flex;">
-		<div style="width:40.5%;margin-right:4px">
-			<hero
-				title="Introduction to CSS for Designers"  
-				image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg"
-				module="Introduction and Project Overview"
-				length="55s"
-				metadata1="Susan Simkins &bull; Beginner"
-				metadata2="0m of 1h 48m"></hero>
-		</div>
-		<div style="width:59.5%;padding-top:32px;">
-			<carousel title="History" limit="3">
-				<Card  
-					image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg" 
-					metadata1="Susan Simkins &bull; Beginner"
-					metadata2="0m of 1h 48m"  
-					progress="77.0415"
-					title="Introduction to CSS for Designers"> 
-				</Card>
-				<Card  
-					image="https://pluralsight.imgix.net/course-images/experience-design-cc-fundamentals-v1.jpg" 
-					metadata1="Brain Treese &bull; Intermediate"
-					metadata2="" 
-					state="Completed" 
-					progress="100"
-					title="Adobe Experience Design CC (Preview) Fundamentals"> 
-				</Card> 
-				<Card  
-					image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
-					metadata1="Brain Treese &bull; Intermediate"
-					metadata2="57m watched"  
-					progress="77.0415"
-					title="Modern Web Layout with Flexbox and CSS Grid">  
-				</Card> 
-				<Card  
-					image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
-					metadata1="Brain Treese &bull; Intermediate"
-					metadata2="57m watched"  
-					progress="77.0415"
-					title="Modern Web Layout with Flexbox and CSS Grid">  
-				</Card>
-			</carousel>
-		</div>
-	</div>        
+	<headline href="#" action="View all">History</headline> 
+	<carousel limit="5">
+		<Card   
+			active="true"              
+			image="https://pluralsight.imgix.net/course-images/audience/software-development.jpg" 
+			metadata1="Matt Milner &bull; Beginner"
+			metadata2="3m watched" 
+			resume="true" 
+			progress="1"
+			title="HTML Fundamentals">
+		</Card> 
+		<Card  
+			image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
+			metadata1="Brain Treese &bull; Intermediate"
+			metadata2="57m watched"  
+			progress="77.0415"
+			title="Modern Web Layout with Flexbox and CSS Grid">  
+		</Card>
+		<Card  
+			image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg" 
+			metadata1="Susan Simkins &bull; Beginner"
+			metadata2="0m of 1h 48m"  
+			progress="77.0415"
+			title="Introduction to CSS for Designers"> 
+		</Card>
+		<Card  
+			image="https://pluralsight.imgix.net/course-images/experience-design-cc-fundamentals-v1.jpg" 
+			metadata1="Brain Treese &bull; Intermediate"
+			metadata2="" 
+			state="Completed" 
+			progress="100"
+			title="Adobe Experience Design CC (Preview) Fundamentals"> 
+		</Card> 
+		<Card  
+			image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
+			metadata1="Brain Treese &bull; Intermediate"
+			metadata2="57m watched"  
+			progress="77.0415"
+			title="Modern Web Layout with Flexbox and CSS Grid">  
+		</Card>
+	</carousel>      
     
-	<Carousel title="Recommendations" limit="5" action=""> 
+	<headline href="#" action="Explore all">Recommendations</headline>
+	<Carousel limit="5"> 
 		<Card
 			image="https://pluralsight.imgix.net/course-images/react-flux-building-applications-v2.png" 
 			metadata1="Cory House &bull; Intermediate"
@@ -112,8 +89,9 @@
 			title="Modern Web Layout with Flexbox and CSS Grid">  
 		</Card>
 	</Carousel> 
-	            
-	<carousel title="Channels" description="Save, organize and share your favorite content to help accomplish your objectives.">
+	 
+	<headline href="#" action="View all">Channels</headline>           
+	<carousel>
 		<Card
 			image="img/channels/Front_End_Development.jpg" 
 			metadata1="Michael Stevens &bull; 1 followers"
@@ -152,44 +130,52 @@
 		</Card>
 	</carousel> 
 	
-	<carousel title="Paths" action="" limit="6">
-		<Card
+	<headline>Paths</headline>
+	<carousel limit="6">
+		<Card  
+			condensed="true"
 			image="img/technology/angular-14a0f6532f.png" 
 			metadata1="7 Courses &bull; 31 Hours"  
 			status="3"
 			title="Angular">
 		</Card> 
-		<Card  
+		<Card   
+			condensed="true"
 			image="img/technology/html5-7ac65c8ec0.png" 
 			metadata1="11 Courses &bull; 35 Hours"   
 			progress="0" 
 			title="HTML5">
 		</Card> 
-		<Card  
+		<Card       
+			condensed="true"
 			image="img/technology/css-c9b214f0d7.png" 
 			metadata1="8 Courses &bull; 27 Hours" 
 			progress="0"
 			title="CSS">
 		</Card>
-		<Card  
+		<Card       
+			condensed="true"
 			image="img/technology/angular-14a0f6532f.png" 
 			metadata1="14 Courses &bull; 55 Hours"    
 			progress="0"
 			title="AngularJS">
 		</Card> 
-		<Card  
+		<Card      
+			condensed="true"
 			image="img/technology/jquery-c93ba170c1.png" 
 			metadata1="8 Courses &bull; 27 Hours"    
 			progress="0"
 			title="jQuery">
 		</Card>
-		<Card  
+		<Card    
+			condensed="true"
 			image="img/technology/javascript-36f5949a45.png" 
 			metadata1="10 Courses &bull; 24 Hours"    
 			progress="0"
 			title="JavaScript">           
 		</Card> 
-		<Card  
+		<Card    
+			condensed="true"
 			image="img/technology/javascript-36f5949a45.png" 
 			metadata1="10 Courses &bull; 24 Hours"    
 			progress="0"
@@ -197,17 +183,17 @@
 		</Card>
 	</carousel>  
 	
-	<carousel title="Bookmarks">
-		<bookmark>
-			<bookmark-row title="Introduction to Sketch" level="Beginner" time="2h 14m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row>
-	  		<bookmark-row title="Creating a Style Guide with Sketch" level="Intermediate" time="5h 5m" author="Stewart Hines" created="Mar 1, 2017"></bookmark-row> 
-	  		<bookmark-row title="Website Planning and Design in Sketch" level="Advanced" time="1h 45m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row> 
-	  		<bookmark-row title="Adobe Experience Design CC (Preview) Fundamentals" level="Beginner" time="1h 5m" author="Matthew Pizzi" created="Nov 7, 2016"></bookmark-row>
-	  		<bookmark-row title="Introduction to Mongoose for Node.js and MongoDB" level="Intermediate" time="1h 41m" author="Mark Scott" created="Oct 14, 2016"></bookmark-row>
-		</bookmark>
-	</carousel>  
-	
-	<carousel title="Get your Skill IQ in your areas of interest" limit="6"> 
+	<headline href="#" action="View all">Bookmarks</headline>
+	<bookmark>
+		<bookmark-row title="Introduction to Sketch" level="Beginner" time="2h 14m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row>
+  		<bookmark-row title="Creating a Style Guide with Sketch" level="Intermediate" time="5h 5m" author="Stewart Hines" created="Mar 1, 2017"></bookmark-row> 
+  		<bookmark-row title="Website Planning and Design in Sketch" level="Advanced" time="1h 45m" author="Jay Boucher" created="Mar 1, 2017"></bookmark-row> 
+  		<bookmark-row title="Adobe Experience Design CC (Preview) Fundamentals" level="Beginner" time="1h 5m" author="Matthew Pizzi" created="Nov 7, 2016"></bookmark-row>
+  		<bookmark-row title="Introduction to Mongoose for Node.js and MongoDB" level="Intermediate" time="1h 41m" author="Mark Scott" created="Oct 14, 2016"></bookmark-row>
+	</bookmark>
+	 
+	<headline>Get your Skill IQ in your areas of interest</headline>
+	<carousel limit="6"> 
 		<Tile
 			image="https://pluralsight2.imgix.net/paths/images/scrum-a5c44d8364.png?trim=color&h=50"
 			title="Using the Scrum Framework"> 
@@ -249,7 +235,8 @@
 <script src="components/bookmark-row.js"></script> 
 <script src="components/card.js"></script> 
 <script src="components/carousel.js"></script>
-<script src="components/checkbox.js"></script>
+<script src="components/checkbox.js"></script> 
+<script src="components/headline.js"></script>
 <script src="components/hero.js"></script>  
 <script src="components/icon.js"></script> 
 <script src="components/tile.js"></script>

@@ -53,7 +53,8 @@ Vue.component('icon',{
 			<svg v-else-if="name == 'user'" viewBox="0 0 24 24"><path d="M12 12c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-6c-1.103 0-2 .896-2 2 0 1.103.897 2 2 2s2-.897 2-2c0-1.104-.897-2-2-2zm8 14H4v-1c0-3.533 3.29-6 8-6s8 2.467 8 6v1zM6.159 18h11.683c-.598-1.808-2.833-3-5.841-3s-5.244 1.192-5.842 3z" /></svg>
 			<svg v-else-if="name == 'warning'" viewBox="0 0 24 24"><path d="M13 19h-2v-2h2v2zm0-4h-2v-4h2v4zm6.531 5L12 6.9917 4.469 20h15.062zM1 22L12 3l11 19H1z" /></svg>
 			<svg v-else-if="name == 'window'" viewBox="0 0 24 24"><path d="M22 7.975h-2v2h2v2h-2v2h1.999l-.002 6H8v-2H6v2c0 1.104.897 2 2 2h14c1.103 0 2-.896 2-2v-10c0-1.102-.897-2-2-2zm-4 6v-10c0-1.102-.897-2-2-2H2c-1.104 0-2 .898-2 2v10c0 1.104.896 2 2 2h14c1.103 0 2-.897 2-2zm-2-8h-6v-2h6v2zm-10 0v-2h2v2H6zm-2-2v2H2v-2h2zm-2 10v-6h13.999l-.002 6H2z" /></svg>
-        </span>
+        	<svg v-else-if="name == 'player--play'" viewBox="0 0 400 400"><circle fill="#000000" opacity="0.7" enable-background="new" cx="200" cy="200" r="200"/><polyline fill="#FFFFFF" points="136,96 136,304 320,200 136,96 "/></svg>
+		</span>
 	`,
 	props: {
 		color: 	{ default: 'white', type: String },

@@ -11,16 +11,11 @@ $(document).ready(function(){
 		$('.carousel').each(function(){     
 			var el = $(this);    
 			  
-			_el = el.find('.carousel--body'); 
-			_c = _el.children().children().attr('class');  
-			_l = _el.attr('data-limits');
-			_d = _el.find('.'+_c);  
-			
-			for(i = 0; i < _d.length; i+=_l) { _d.slice(i, i+_l).wrapAll($('<div class="carousel--segment" />')); }  
+			_el = el.find('.carousel--body');              
+			_l = _el.attr('data-limits');               
+			                                 
 			_count = el.find('.carousel--segment').length;         
-			if(_count > 1){        
-				svg = $('');
-				icon = $('<span />').attr('class','icon md white').append(svg);  
+			if(_count > 1){                                                      
 		   		control = $('<div />').attr('class','carousel--control').append(icon);                                          
 				_el.append(control);  
 				   
@@ -41,8 +36,14 @@ $(document).ready(function(){
 			$('.carousel--overflow').each(function(){
 				$(this).find('.carousel--segment').css('flex-basis',$(this).outerWidth());
 			});
-		})
-	}                                 
+		});
+	} 
+	
+	
+	window.setTimeout(function(){
+		var el = $('.carousel:eq(0) .card:eq(0)');    
+			el.removeClass('active');
+	},5000);                             
 	
 	//css
 	$(document).on({
