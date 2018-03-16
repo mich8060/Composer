@@ -349,8 +349,9 @@ input[type="checkbox"] + label:before { border: solid 1px #cccccc; border-radius
 .megarow--item { align-items: center; border-top: solid 1px #363636; display: flex; flex-direction: row; padding: 24px 16px; transition: all 0.3s ease; }
 .megarow--item:hover { background: #222222; }
 .megarow--metadata { font-size: 12px; line-height: 20px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; color: #aaaaaa; }
+.megarow--metadata a { color: #aaaaaa; }
 .megarow--metadata span { display: inline-block; padding: 0 8px; }
-.megarow--title { font-size: 18px; line-height: 24px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; font-weight: 500; }
+.megarow--title { font-size: 18px; line-height: 24px; letter-spacing: 0; text-rendering: optimizeLegibility; word-wrap: normal; font-weight: 500; width: 90%; }
 .megarow--title a { color: #ffffff; }
 
 .menu { cursor: pointer; display: block; padding: 0; margin: 0; }

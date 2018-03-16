@@ -1,23 +1,26 @@
 Vue.component('megarow', {
   	template: `  
 		<div class="megarow">
-    		<div class="megarow--item" v-for="r in results"> 
-				
-				<div class="megarow--image"><img :src="r.image" alt="" /></div>
-				<div class="megarow--content">
-					<div class="megarow--title"><a :href="r.prodId">{{r.title}}</a></div>
-					<div class="megarow--metadata">
-						{{r.authors[0].displayName}} &bull;
-						{{r.skillLevels}} <span>&bull;</span>
-						{{r.publishedDate}} <span>&bull;</span>
-						{{r.duration}} <span>&bull;</span>
-						{{r.averageRating}}
+    		<div v-for="r in results">    
+				<div class="megarow--item" v-if="r.categories == 'course'">
+					<div v-for="(v,i) in r.image">     
+						<div v-if="i == 'url'" class="megarow--image"><img :src="v" alt="" /></div>
 					</div>
-				</div>
-				<div class="megarow--actions">
-					<icon name="bookmark" color="gray02"></icon>
-					<icon name="more" color="gray02"></icon>
-					<icon name="caret-down" color="gray02"></icon>
+					<div class="megarow--content">
+						<div class="megarow--title"><a :href="r.prodId" v-html="r.title"></a></div>
+						<div class="megarow--metadata">
+							<a href="">{{r.authors[0].displayName}}</a> <span>&bull;</span>
+							{{r.skillLevels}} <span>&bull;</span>
+							{{r.publishedDate}} <span>&bull;</span>
+							{{r.duration}} <span>&bull;</span>
+							{{r.averageRating}}
+						</div>
+					</div>
+					<div class="megarow--actions">
+						<icon name="bookmark" color="gray02"></icon>
+						<icon name="more" color="gray02"></icon>
+						<icon name="caret-down" color="gray02"></icon>
+					</div>
 				</div>
 			</div> 
         </div>
@@ -28,20 +31,20 @@ Vue.component('megarow', {
 		}
 	},
 	beforeCreate:function(){},  
-	created:function(){             
-		axios.get('https://sp10050dad.guided.ss-omtrdc.net/?q=css&page=1&do=landing2')
-		    .then(response => {                                  
-				this.results = response.data.resultsets[1].results;
-				for(x = 0;x < this.results.length;x++){
-					_el = this.results[x]; 
-					_el.image = this.formatImage(_el.prodId,_el.imageVersion);
-					_el.publishedDate = this.formatDate(_el.publishedDate); 
-					_el.duration = this.formatDuration(_el.duration);
+	created:function(){  
+		axios.get('https://app.pluralsight.com/search/proxy?q=css')
+			.then(response => { 
+				this.results = response.data.resultsets[0].results;
+				for(x = 0;x < this.results.length;x++){   
+					_el = this.results[x];
+					_el.image.url = this.formatImage(_el.image.url); 
+		   			_el.publishedDate = this.formatDate(_el.publishedDate); 
+		   			_el.duration = this.formatDuration(_el.duration); 
 				}
-		    })
+			})
 		    .catch(e => {
 		      	this.errors.push(e)
-		    });                
+		    });              
 	},
 	methods: {
 		formatDate:function(_d){
@@ -78,8 +81,9 @@ Vue.component('megarow', {
 
 		    return formattedDuration;
 		},
-		formatImage:function(id,version){
-			return 'https://pluralsight-res.cloudinary.com/image/upload/w_120/pluralsight-static/course-images/'+id+'-v'+version+'.jpg';
+		formatImage:function(src){ 
+			console.log(src);
+			return src+'?w=120';
 		}
 	}
 });

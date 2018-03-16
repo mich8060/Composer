@@ -759,6 +759,10 @@
 		@include type--xs;
 		color:$gray02;
 		
+		a {      
+			color:$gray02;
+		}
+		
 		span {  
 			display:inline-block;
 			padding:0 8px;
@@ -767,7 +771,8 @@
 	
 	&--title {
 		@include type--md;
-		@include type_weight--medium; 
+		@include type_weight--medium;
+		width:90%; 
 		
 		a { color:$white; }
 	}
