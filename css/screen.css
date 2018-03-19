@@ -326,7 +326,7 @@ input[type="checkbox"] + label:before { border: solid 1px #cccccc; border-radius
 
 .main { margin: 0 auto; max-width: 1600px; padding: 92px 20px; }
 @media only screen and (min-width: 600px) { .main { padding: 92px 90px 90px 150px; } }
-@media only screen and (min-width: 1600px) { .main { padding: 92px 60px 90px 280px; } }
+@media only screen and (min-width: 1600px) { .main { padding: 92px 90px 90px 310px; } }
 
 .menu { cursor: pointer; display: block; padding: 0; margin: 0; }
 .menu:hover { background: #363636; }
