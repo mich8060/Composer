@@ -227,7 +227,7 @@
 	&--actionmenu { position:relative; }
 	
 	&--head {      
-		background:$gray04;
+		background:$gray05;
 		cursor:pointer;
  		height:144px;       
 		margin-bottom:8px;
@@ -352,9 +352,11 @@
 		@include type--xxs;
 		@include type_weight--bold;
 		align-items:center;
-		background:$gray05;
+		background:$gray00;
+		border-radius:2px;
+		color:$gray06;
 		display:flex;  
-		left:0;    
+		left:8px;    
 		padding:4px 8px;
 		position:absolute; 
 		text-transform:uppercase;

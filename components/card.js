@@ -2,8 +2,8 @@ Vue.component('card', {
 	template: `                                                           
 		<div class="card">           
 			<div class="card--head">
-			 	<div class="card--type" v-if="(type != 'channel' && type != 'path')">
-			    	<icon v-bind:name="type" color="white" size="sm"></icon>
+			 	<div class="card--type" v-if="(type != 'channel' && type != 'path' && type != 'course')">
+			    	<icon v-bind:name="type" color="black" size="sm"></icon>
 					{{type}}
 				</div>
 				<a :href="href" class="card--overlay" v-if="overlay == true">
