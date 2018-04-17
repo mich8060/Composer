@@ -311,6 +311,34 @@ input[type="checkbox"] {
 	}
 }
 
+.list {
+	&.horz {
+		align-items:center;
+		display:flex;
+		flex-direction: row;
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		
+		li {
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			margin-right:8px;
+		}
+	}
+}
+
+.pill {
+	@include type--xs;
+	background:rgba($gray04,0.8);
+	border-radius:50px;
+	display:inline-block;
+	line-height:24px;
+	margin-right:8px;
+	padding:0 12px;
+}
+
 .progress {  
 	background:$gray03; 
 	-webkit-appearance:none;

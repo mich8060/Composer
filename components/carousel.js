@@ -14,7 +14,9 @@ Vue.component('carousel', {
 		</div>
 	`,
 	props: {                                               
-		limit: { default: 5, type: Number },  
+		limit: { default:'5', type:String },  
+	},
+	computed:{
 	}
 }); 
 

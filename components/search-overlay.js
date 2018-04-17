@@ -1,18 +1,44 @@
-<div class="search--overlay">
-	<div class="search--container">
-		<div class="search--title">Search</div> 
-		<div class="search--editable" contenteditable="true"></div>
-		<div class="search--close">
-			<span class="icon">
-				<svg viewBox="0 0 24 24" version="1.1">
-					<title>Close icon</title>
-					<g class="iconFill---2TaXY">
-						<polygon points="22 0 24 2 2 24 0 22"></polygon>
-						<polygon transform="translate(12, 12) scale(-1, 1) translate(-12, -12) " points="22 0 24 2 2 24 0 22"></polygon>
-					</g>
-				</svg>
-			</span>
+Vue.component('search-overlay', {  
+	template: `
+		<div class="search--overlay">
+			<div class="search--container">
+				<div class="search--title">Search</div> 
+				<div class="search--edit" contenteditable="true" @keydown.enter.prevent @keyup="buildSuggest($event)" @keyup.enter.prevent="enterSuggest($event)">{{term}}</div>
+				<div class="search--close" @click="closeSearchOverlay()">  
+					<icon name="close" size="lg"></icon>
+				</div>
+				<ul class="search--list">
+					<li v-for="r in results"><a :href="'./search.html?q='+r.displayText">{{r.displayText}} <span v-if="r.type == 'course'"> [Course]</span></a></li>
+				</ul> 
+			</div>
 		</div>
-		<ul class="search--list"></ul> 
-	</div>
-</div>
+	`,
+	data(){
+		return {
+			term: '',
+			results: []
+		}
+	},
+	methods: {
+		enterSuggest(e){
+			t = e.target.innerHTML;
+			window.location = './search.html?q='+t;
+		},
+		buildSuggest(e){
+			t = e.target.innerHTML;
+			axios.get("http://localhost:8888/_autosuggest/proxy.php?searchTerm="+t)
+				.then(response => { 
+					this.results = response.data[1];
+				});
+		},
+		closeSearchOverlay(){
+			document.querySelector('.search--overlay').style.display = 'none';
+		}
+	},
+	mixins: [myMixin],
+	created(){
+		this.term = this.getParameter('q');
+	}  
+}); 
+
+console.log('Search overlay component loaded.');

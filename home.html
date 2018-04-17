@@ -8,30 +8,60 @@
 </head>
 <body>   
 <app id="app" context="home">   
-	
+	<div class="galaxy">
+		<div class="galaxy--image"><img src="img/profile/background--001.jpg" alt="" /></div>
+		<div class="galaxy--container">
+			<div class="galaxy--column">
+				<div class="account">  
+					<div class="account--avatar">
+						<div class="avatar"><img src="img/avatar/avatar.png" alt="" /></div>
+					</div>
+					<div class="account--info" style="text-align:left;">
+						<div class="account--name">Jane Doe</div>
+						<div class="account--email">Front-End Developer</div>
+						<div class="account--email">Pluralsight</div>
+					</div>  
+				</div>
+				<div class="galaxy--tokens">
+					<ul class="list horz">
+						<li>Points</li>
+						<li><span class="pill">0</span></li>
+						<li>Badges</li>
+						<li><span class="pill">0</span></li>
+					</ul>	
+				</div>	
+			</div>
+			<div class="galaxy--column">
+				<btn appearance="stroke" size="sm">Edit profile</btn>
+				<btn appearance="stroke" size="sm">My Account</btn>	
+			</div>
+
+
+		</div>
+	</div>
 	<headline href="#" action="View all">History</headline> 
-	<carousel limit="5">
+	<carousel limit="5" term="css">
 		<Card   
-			active="true"              
+			:active="true"              
 			image="https://pluralsight.imgix.net/course-images/audience/software-development.jpg" 
 			metadata1="Matt Milner &bull; Beginner"
 			metadata2="3m watched" 
-			resume="true" 
-			progress="1"
+			:resume="true" 
+			:progress="1"
 			title="HTML Fundamentals">
 		</Card> 
 		<Card  
 			image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
 			metadata1="Brain Treese &bull; Intermediate"
 			metadata2="57m watched"  
-			progress="77.0415"
+			:progress="77.0415"
 			title="Modern Web Layout with Flexbox and CSS Grid">  
 		</Card>
 		<Card  
 			image="https://pluralsight.imgix.net/course-images/introduction-css-1753-v1.jpg" 
 			metadata1="Susan Simkins &bull; Beginner"
 			metadata2="0m of 1h 48m"  
-			progress="77.0415"
+			:progress="77.0415"
 			title="Introduction to CSS for Designers"> 
 		</Card>
 		<Card  
@@ -39,14 +69,14 @@
 			metadata1="Brain Treese &bull; Intermediate"
 			metadata2="" 
 			state="Completed" 
-			progress="100"
+			:progress="100"
 			title="Adobe Experience Design CC (Preview) Fundamentals"> 
 		</Card> 
 		<Card  
 			image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
 			metadata1="Brain Treese &bull; Intermediate"
 			metadata2="57m watched"  
-			progress="77.0415"
+			:progress="77.0415"
 			title="Modern Web Layout with Flexbox and CSS Grid">  
 		</Card>
 	</carousel>      
@@ -57,35 +87,35 @@
 			image="https://pluralsight.imgix.net/course-images/react-flux-building-applications-v2.png" 
 			metadata1="Cory House &bull; Intermediate"
 			metadata2="3m watched"  
-			progress="1"
+			:progress="1"
 			title="Building Applications with React and Flux">                       
 		</Card>
 		<Card
 			image="	https://pluralsight.imgix.net/course-images/designing-duotone-photoshop-indesign-v1.jpg" 
 			metadata1="Pariah Burke &bull; Intermediate"
 			metadata2="0m watched"  
-			progress="0"
+			:progress="0"
 			title="Designing in Duotone in Photoshop and InDesign"> 
 		</Card>  
 		<Card
 			image="https://pluralsight.imgix.net/course-images/after-effects-using-live-text-premiere-pro-2481-v1.jpg" 
 			metadata1="Laura Hawk &bull; Intermediate"
 			metadata2="0m watched"  
-			progress="0"
+			:progress="0"
 			title="Using Live Text with After Effects and Premiere Pro">
 		</Card>
 		<Card
 			image="https://pluralsight.imgix.net/course-images/audience/software-development.jpg" 
 			metadata1="Matt Milner &bull; Beginner"
 			metadata2="3m watched"  
-			progress="1"
+			:progress="1"
 			title="HTML Fundamentals">
 		</Card> 
 		<Card  
 			image="https://pluralsight.imgix.net/course-images/modern-web-layout-flexbox-css-grid-v1.jpg" 
 			metadata1="Brain Treese &bull; Intermediate"
 			metadata2="57m watched"  
-			progress="77.0415"
+			:progress="77.0415"
 			title="Modern Web Layout with Flexbox and CSS Grid">  
 		</Card>
 	</Carousel> 
@@ -95,37 +125,37 @@
 		<Card
 			image="img/channels/Front_End_Development.jpg" 
 			metadata1="Michael Stevens &bull; 1 followers"
-			overlay="false"       
+			:overlay="false"       
 			title="Front End Development">
 		</Card> 
 		<Card  
 			image="img/channels/analytics.jpg" 
 			metadata1="Michael Stevens &bull; 1 followers"
-			overlay="false"  
+			:overlay="false"  
 			title="Analytics">
 		</Card> 
 		<Card  
 			image="img/channels/Prototyping.jpg" 
 			metadata1="Michael Stevens &bull; 1 followers"
-			overlay="false" 
+			:overlay="false" 
 			title="Advanced Prototyping">
 		</Card>
 		<Card  
 			image="img/channels/back_end_development.jpg" 
 			metadata1="Michael Stevens &bull; 1 followers"
-			overlay="false" 
+			:overlay="false" 
 			title="Back End Development">
 		</Card>
 		<Card  
 			image="img/channels/ux.jpg" 
 			metadata1="Cole Quartuccio &bull; 21 followers"
-			overlay="false"        
+			:overlay="false"        
 			title="UX Design at Pluralsight">
 		</Card>  
 		<Card
 			image="img/channels/Front_End_Development.jpg" 
 			metadata1="Michael Stevens &bull; 1 followers"
-			overlay="false"       
+			:overlay="false"       
 			title="Front End Development">
 		</Card>
 	</carousel> 
@@ -133,52 +163,52 @@
 	<headline>Paths</headline>
 	<carousel limit="6">
 		<Card  
-			condensed="true"
+			:condensed="true"
 			image="img/technology/angular-14a0f6532f.png" 
 			metadata1="7 Courses &bull; 31 Hours"  
-			status="3"
+			:status="3"
 			title="Angular">
 		</Card> 
 		<Card   
-			condensed="true"
+			:condensed="true"
 			image="img/technology/html5-7ac65c8ec0.png" 
 			metadata1="11 Courses &bull; 35 Hours"   
-			progress="0" 
+			:progress="0" 
 			title="HTML5">
 		</Card> 
 		<Card       
-			condensed="true"
+			:condensed="true"
 			image="img/technology/css-c9b214f0d7.png" 
 			metadata1="8 Courses &bull; 27 Hours" 
-			progress="0"
+			:progress="0"
 			title="CSS">
 		</Card>
 		<Card       
-			condensed="true"
+			:condensed="true"
 			image="img/technology/angular-14a0f6532f.png" 
 			metadata1="14 Courses &bull; 55 Hours"    
-			progress="0"
+			:progress="0"
 			title="AngularJS">
 		</Card> 
 		<Card      
-			condensed="true"
+			:condensed="true"
 			image="img/technology/jquery-c93ba170c1.png" 
 			metadata1="8 Courses &bull; 27 Hours"    
-			progress="0"
+			:progress="0"
 			title="jQuery">
 		</Card>
 		<Card    
-			condensed="true"
+			:condensed="true"
 			image="img/technology/javascript-36f5949a45.png" 
 			metadata1="10 Courses &bull; 24 Hours"    
-			progress="0"
+			:progress="0"
 			title="JavaScript">           
 		</Card> 
 		<Card    
-			condensed="true"
+			:condensed="true"
 			image="img/technology/javascript-36f5949a45.png" 
 			metadata1="10 Courses &bull; 24 Hours"    
-			progress="0"
+			:progress="0"
 			title="JavaScript">           
 		</Card>
 	</carousel>  
@@ -225,9 +255,12 @@
 	</carousel>
 </app>                                                                        
 <script src="js/vue.js"></script>  
+<script src="js/axios.min.js"></script> 
+<script src="js/composer.js"></script>
 <script src="components/actionmenu.js"></script>           
 <script src="components/app.js"></script>  
 <script src="components/app-header.js"></script> 
+<script src="components/app-menu.js"></script>
 <script src="components/app-nav.js"></script> 
 <script src="components/app-search.js"></script>
 <script src="components/button.js"></script>
@@ -239,6 +272,7 @@
 <script src="components/headline.js"></script>
 <script src="components/hero.js"></script>  
 <script src="components/icon.js"></script> 
+<script src="components/search-overlay.js"></script>
 <script src="components/tile.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery.pluralsight.js"></script> 

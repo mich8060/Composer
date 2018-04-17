@@ -2,11 +2,11 @@ Vue.component('app-nav', {
 	template: `
 		<nav class="nav">                     
 			<div class="nav--container">              
-				<a href="#" class="nav--item branding">  
+				<a href="home.html" class="nav--item branding">  
 					<icon name="logo" color="white"></icon>
 					<span>Pluralsight</span>
 				</a>
-				<a href="#" class="nav--item" v-bind:class="{ 'active': context == 'home' }"> 
+				<a href="home.html" class="nav--item" v-bind:class="{ 'active': context == 'home' }"> 
 					<icon name="home" color="gray01"></icon>
 					<span>Home</span>
 				</a>

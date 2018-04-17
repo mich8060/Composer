@@ -1,6 +1,7 @@
 Vue.component('app',{
 	template:`
-		<div id="app">   
+		<div id="app">
+		    <search-overlay></search-overlay>
 			<app-header v-bind:name="name" v-bind:email="email" v-bind:avatar="avatar"></app-header>                                                       
 			<app-nav v-bind:context="context"></app-nav> 
 			<main class="main">

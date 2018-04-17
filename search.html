@@ -7,10 +7,26 @@
 <link rel="stylesheet" href="css/screen.css" />
 </head>
 <body>   
-<app id="app" context="" name="Michael Stevens" email="michael-stevens@pluralsight.com" avatar="https://www.gravatar.com/avatar/73f417e8d88ab7668b54f9d52a029b47?r=g&s=80&d=https://s.pluralsight.com/sc/img/account/avatar-v2.png">     
+<app id="app" context="">     
 	<!-- All code starts below this line -->
-       
-	<megarow></megarow>
+    	
+
+    <selector align="right" label="Relevance" :content="false">
+		<myitem label="Relevance" :selected="true">Showing Relevance</myitem>
+    	<myitem label="A - Z">Showing A - Z</myitem>
+    	<myitem label="Newest">Showing Newest</myitem>
+    	<myitem label="Rating">Showing Rating</myitem>
+    </selector>
+
+	<tabs>
+        <tab title="All" :selected="true">
+			<facets></facets>
+			<megarow></megarow>
+		</tab>
+        <tab title="Courses"><megarow></megarow></tab>
+        <tab title="Paths">Paths tab content</tab>
+        <tab title="Mentors">Mentors tab content</tab>
+    </tabs>
 	
 	<!-- All code starts above this line -->                                                                 
 </app>                                                                        
@@ -20,9 +36,15 @@
 <script src="components/app.js"></script>  
 <script src="components/app-header.js"></script> 
 <script src="components/app-nav.js"></script> 
-<script src="components/app-search.js"></script> 
+<script src="components/app-search.js"></script>
+<script src="components/button.js"></script>
+<script src="components/facets.js"></script>
 <script src="components/icon.js"></script>
 <script src="components/megarow.js"></script>
+<script src="components/modal.js"></script>
+<script src="components/search-overlay.js"></script>
+<script src="components/selector.js"></script>
+<script src="components/tabs.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery.pluralsight.js"></script>	 
 </body>

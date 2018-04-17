@@ -50,11 +50,11 @@ $gradientVert:  linear-gradient(to bottom, #f05a28, #e80a89);
 @mixin type_weight--medium 	{ font-weight:500; }
 @mixin type_weight--bold 	{ font-weight:700; } 
 
-$type_height--compress: 	16px; 
-$type_height--tight: 		20px;
-$type_height--standard: 	24px;
-$type_height--extra: 		32px;
-$type_height--huge: 		40px; 
+@mixin type_height--compress  	{ line-height:16px; } 
+@mixin type_height--tight  		{ line-height:20px; }
+@mixin type_height--standard  	{ line-height:24px; }
+@mixin type_height--extra  		{ line-height:32px; }
+@mixin type_height--huge  		{ line-height:40px; } 
 
 /* 	
 	Containers

@@ -1,3 +1,7 @@
+// Set config settings to allow chrome inspector panel.
+Vue.config.devtools = true;
+Vue.config.debug = true;
+
 // Defining mixin object
 var myMixin = {
 	methods: {

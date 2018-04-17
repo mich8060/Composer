@@ -1,6 +1,6 @@
 Vue.component('card', {                 
 	template: `                                                           
-		<div class="card" :class="{'condensed': condensed, 'active': active }">        
+		<div class="card" :class="{'condensed': condensed, 'active': isActive }">        
 		    <div class="card--detail" v-bind:style="{ backgroundImage: 'url(' + image + ')' }">
 		    	<hero :image="image" :metadata1="metadata1" :metadata2="metadata2" :title="title" :resume="resume" :progress="progress" :type="type"></hero>
 			</div>
@@ -26,6 +26,19 @@ Vue.component('card', {
 			</div>
 		</div>
 	`,
+	data(){
+		return {
+			isActive: this.active,
+		}
+	},
+	mounted(){
+		if(this.active){
+			const vm = this;
+			setTimeout(function(){
+				vm.isActive = false;
+			},5000);
+		}
+	},
 	props: {                   
 		active:  	{ default: false, type: Boolean },
 		condensed:  { default: false, type: Boolean },

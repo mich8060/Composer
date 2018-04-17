@@ -11,21 +11,23 @@ Vue.component('bookmark-row', {
 	`,
 	props: {   
 		author: 	{ default: 'Jan Doe', type: String },
-		created: 	{ default: null, type: Date },
 		level: 		{ default: 'Beginner', type: String },
 		time: 		{ default: '2h 00m', type: String },
 		title: 		{ default: 'Course title', type: String }
 	},                                   
-    data: function(){   
+    data:function(){   
 		// Calculate Date if property left empty.
 		if(this.created == null){ 
 			var date = new Date(); 
 			var monthNames = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul","Aug", "Sept", "Oct","Nov", "Dec"]; 
 		  	var day = date.getDate();
 		  	var monthIndex = date.getMonth();
-		  	var year = date.getFullYear();       
-			this.created = monthNames[monthIndex] + ' ' + day + ', ' + year;  
+		  	var year = date.getFullYear(); 
 		}
+		
+		return {
+			created: monthNames[monthIndex] + ' ' + day + ', ' + year
+		};
 	}
 });
 	

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" />
+<title></title> 
+<link rel="stylesheet" href="../css/screen.css" />
+<link rel="stylesheet" href="../css/compose.css" />
+</head>
+<body>   
+<div class="composer">
+	<div class="composer--aside">
+		<a href="#">app</a>
+		<a href="#">app-header</a>
+		<a href="#">app-nav</a>
+		<a href="#">app-search</a>
+		<a href="#">bookmark</a>      
+		<a href="#">card</a>
+		<a href="#">carousel</a>
+		<a href="#">hero</a>
+		<a href="#">icon</a>
+		<a href="#">tile</a>
+	</div>
+	<div class="composer--body"> 
+		<div class="composer--main">         
+			<div class="composer--navigation">  
+				<btn appearance="flat light" size="sm">Prev</btn> 
+				<btn appearance="flat light" size="sm">Next</btn>  
+			</div>
+			<div class="composer--headline">Card</div>     
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus facilisis rutrum. 
+				Pellentesque id elit nunc. Phasellus interdum iaculis ante a volutpat. Suspendisse sit amet 
+				ipsum dui. Sed aliquet, augue nec commodo sollicitudin, erat purus imperdiet quam, id tempus 
+				mauris nisl eget augue.
+			</p>
+			<div class="composer--section">                   
+				<div class="composer--subheader">Example</div>
+				<div class="composer--sample">
+					<modal label="Open Modal" size="sm">Hello Modal World!</modal>
+					<modal label="Another Modal" size="sm">This is another modal!</modal>
+				</div>
+
+				<div class="composer--example">                     
+					<pre class="composer--pre" contenteditable="true">&lt;Card&gt;&lt;/Card&gt;</pre>
+					<btn size="sm">Try if yourself</btn> 
+				</div>
+			</div>  
+			<div class="composer--section">
+				<div class="composer--subheader">Attributes</div> 
+				<table class="composer--table">
+					<thead>
+						<tr>
+							<th>Attribute</th>
+							<th>Value</th>   
+							<th>Type</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>image</td>
+							<td><i>URL</i></td>       
+							<td>String</td>
+							<td>Specifies the URL of an image</td> 
+						</tr>
+						<tr>
+							<td>metadata1</td>
+							<td><i>text</i></td>         
+							<td>String</td>
+							<td>Displays as the first line of metadata inside the component.</td>
+						</tr> 
+						<tr>
+							<td>metadata2</td>
+							<td><i>text</i></td>       
+							<td>String</td>
+							<td>Displays as the second line of metadata inside the component.</td>
+						</tr>
+						<tr>
+							<td>overlay</td>
+							<td>
+								true | false
+							</td>
+							<td>Boolean</td>
+							<td>Should the card display an black gradient when the user hovers over it.</td>
+						</tr>
+						<tr>
+							<td>progress</td>
+							<td>0 - 100</td>
+							<td>Number</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>title</td>
+							<td><i>text</i></td>       
+							<td>String</td>
+							<td></td>
+						</tr> 
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>                                                                      
+<script src="../js/vue.js"></script>    
+<script src="../js/axios.min.js"></script> 
+<script src="../js/composer.js"></script> 
+<script src="../components/button.js"></script>
+<script src="../components/icon.js"></script>
+<script src="../components/modal.js"></script>   
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/jquery.composer.js"></script>	 
+</body>
+</html>
